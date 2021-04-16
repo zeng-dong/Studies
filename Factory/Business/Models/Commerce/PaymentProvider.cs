@@ -1,7 +1,9 @@
 ﻿namespace Factory.Business.Models.Commerce
 {
-    public class PaymentProvider
+    public enum PaymentProvider
     {
-        
+        Paypal,
+        CreditCard,
+        Invoice
     }
 }
