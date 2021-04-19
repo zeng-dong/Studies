@@ -7,5 +7,13 @@
 	docker network create kafka
 4. run zookeeper
 	docker run -d --network=kafka --name=zookeeper -e ZOOKEEPER_CLIENT_PORT=2181 -e ZOOKEEPER_TICK_TIME=2000 -p 2181:2181  confluentinc/cp-zookeeper
+	- can run 'docker logs zookeeper' to see it is running
 5. run kafka
 	docker run -d --network=kafka --name=kafka -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092 -p 9092:9092  confluentinc/cp-kafka
+
+6. install confluent.kafka nuget package
+
+
+7. We will use a generic host to configure both producer and consumer. so install Microsoft.Extensions.Hosting
+8. create our Producer generic host KafkaProducerHostedService
+9. run producer, confirm its producing using Conduktor. 
