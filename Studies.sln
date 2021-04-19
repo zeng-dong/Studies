@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LanguageFeatures", "Languag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Records", "Records\Records.csproj", "{91F267D7-E9D8-4E9D-AFFE-917C94683F58}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{7EF55878-1ECF-4AB6-A8E2-229D5F15FCCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kafka", "Kafka\Kafka.csproj", "{D2EC576A-5CDB-4097-A57E-C4B15EDCAFBC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{91F267D7-E9D8-4E9D-AFFE-917C94683F58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91F267D7-E9D8-4E9D-AFFE-917C94683F58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91F267D7-E9D8-4E9D-AFFE-917C94683F58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2EC576A-5CDB-4097-A57E-C4B15EDCAFBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2EC576A-5CDB-4097-A57E-C4B15EDCAFBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2EC576A-5CDB-4097-A57E-C4B15EDCAFBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2EC576A-5CDB-4097-A57E-C4B15EDCAFBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{62D2ED7C-3C17-489C-A7E0-AA81F5D1F7AB} = {3C62CF59-711A-44DF-8360-6DC65BC6A161}
 		{91F267D7-E9D8-4E9D-AFFE-917C94683F58} = {94D07055-AFCA-4E7F-9A9E-49AA273BACBA}
+		{D2EC576A-5CDB-4097-A57E-C4B15EDCAFBC} = {7EF55878-1ECF-4AB6-A8E2-229D5F15FCCC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1880E68-29D6-48A6-9595-E961759756D1}
