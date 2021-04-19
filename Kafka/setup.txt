@@ -17,3 +17,5 @@
 7. We will use a generic host to configure both producer and consumer. so install Microsoft.Extensions.Hosting
 8. create our Producer generic host KafkaProducerHostedService
 9. run producer, confirm its producing using Conduktor. 
+
+10. use another package for consummer, install Kafka-sharp
