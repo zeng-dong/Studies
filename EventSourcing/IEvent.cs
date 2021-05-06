@@ -10,7 +10,7 @@ namespace EventSourcing
 
     public record ProductReceived(string Sku, int Quantity, DateTime DateTime) : IEvent;
 
-    public record InventoryAdjusted(string Sku, int Quantity, DateTime DateTime) : IEvent;
+    public record InventoryAdjusted(string Sku, int Quantity, string Reason, DateTime DateTime) : IEvent;
 
 
 }
