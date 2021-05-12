@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MoreEventSourcing", "MoreEv
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FSharpFundamentals", "FSharpFundamentals", "{01EB30B3-C243-48C4-96A6-20DE9B0361BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsAndCqrs", "EsAndCqrs\EsAndCqrs.csproj", "{274039AC-744B-4935-A9D9-FFAB6D3B1E2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,10 @@ Global
 		{2831B14C-98C0-4FD4-8790-C49E8E30F46A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2831B14C-98C0-4FD4-8790-C49E8E30F46A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2831B14C-98C0-4FD4-8790-C49E8E30F46A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{274039AC-744B-4935-A9D9-FFAB6D3B1E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{274039AC-744B-4935-A9D9-FFAB6D3B1E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{274039AC-744B-4935-A9D9-FFAB6D3B1E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{274039AC-744B-4935-A9D9-FFAB6D3B1E2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{2831B14C-98C0-4FD4-8790-C49E8E30F46A} = {6E38A776-0FF7-44CB-B8F5-79606A772A93}
 		{5BA0226C-4C62-4C22-8269-4BDDB2476413} = {3C62CF59-711A-44DF-8360-6DC65BC6A161}
 		{01EB30B3-C243-48C4-96A6-20DE9B0361BC} = {94D07055-AFCA-4E7F-9A9E-49AA273BACBA}
+		{274039AC-744B-4935-A9D9-FFAB6D3B1E2B} = {5BA0226C-4C62-4C22-8269-4BDDB2476413}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1880E68-29D6-48A6-9595-E961759756D1}
