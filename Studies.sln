@@ -22,6 +22,9 @@ EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "IceCreamTruckFsharp", "IceCreamTruckFsharp\IceCreamTruckFsharp.fsproj", "{2831B14C-98C0-4FD4-8790-C49E8E30F46A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MoreEventSourcing", "MoreEventSourcing", "{5BA0226C-4C62-4C22-8269-4BDDB2476413}"
+	ProjectSection(SolutionItems) = preProject
+		jargons.txt = jargons.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FSharpFundamentals", "FSharpFundamentals", "{01EB30B3-C243-48C4-96A6-20DE9B0361BC}"
 EndProject

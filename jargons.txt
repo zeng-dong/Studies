@@ -1,0 +1,8 @@
+Event Aggregate Root
+Aggregate Root Repository
+Message
+Message Repository
+Messaeg Dispatcher
+Consumer(s) Projections(s)
+Read Model(s)
+Process Manager(s)
