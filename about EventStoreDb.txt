@@ -1,0 +1,10 @@
+x: not working
+docker run -d --name eventstore -p 2113:2113 -p 1113:1113 eventstore/eventstore
+
+x: not working:
+to set dev mode :
+docker run -d --name eventstore -p 2113:2113 -p 1113:1113 -e EVENTSTORE_DEV=true eventstore/eventstore
+
+working:
+from ES own web site:
+docker run --name esdb-node -it -p 2113:2113 -p 1113:1113 eventstore/eventstore:latest --insecure --run-projections=All --enable-external-tcp --enable-atom-pub-over-http
