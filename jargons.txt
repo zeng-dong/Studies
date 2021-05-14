@@ -1,4 +1,4 @@
-Event Aggregate Root
+Event Aggregate (Root)
 Aggregate Root Repository
 Message
 Message Repository
@@ -6,3 +6,23 @@ Messaeg Dispatcher
 Consumer(s) Projections(s)
 Read Model(s)
 Process Manager(s)
+
+1. Reconstitute the Aggregate from old events
+2. Interact with the model
+3. Persist/dispatch new events
+
+Event
+	a representation of a historical fact;
+	something that happpened in the past.
+
+	so make sense to make it an immutable value object
+		class PurchaseWasMade
+		{
+			private int Amount;
+			public ctor(int amount){ Amount = amount}
+			public int GetAmount(){}		
+		}
+	everything in the ctor contains the context that is associated with the intention that describes the class
+
+Aggregate Root
+	an interaction interface to your domain, limited by a consistency boundary
