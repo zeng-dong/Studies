@@ -1,16 +1,10 @@
+﻿using EventStore.ClientAPI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EventSourcingTaskApp
 {
@@ -26,6 +20,14 @@ namespace EventSourcingTaskApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var eventStoreConnection = EventStoreConnection.Create(
+                connectionString: Configuration.GetValue<string>("EventStore:ConnectionString"),
+                builder: ConnectionSettings.Create().KeepReconnecting(),
+                connectionName: Configuration.GetValue<string>("EventStore:ConnectionName"));
+
+            eventStoreConnection.ConnectAsync().GetAwaiter().GetResult();
+
+            services.AddSingleton(eventStoreConnection);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
