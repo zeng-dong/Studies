@@ -1,4 +1,5 @@
-﻿using EventStore.ClientAPI;
+﻿using EventSourcingTaskApp.Infrastructure;
+using EventStore.ClientAPI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -28,6 +29,7 @@ namespace EventSourcingTaskApp
             eventStoreConnection.ConnectAsync().GetAwaiter().GetResult();
 
             services.AddSingleton(eventStoreConnection);
+            services.AddTransient<AggregateRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

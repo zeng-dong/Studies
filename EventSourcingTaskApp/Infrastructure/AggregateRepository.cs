@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EventSourcingTaskApp.Infrastructure
 {
-    public class AggregateRepository
+    public class AggregateRepository                    // we use this class when sending to ES or receiving from ES
     {
         private readonly IEventStoreConnection _eventStore;
 
@@ -21,7 +21,7 @@ namespace EventSourcingTaskApp.Infrastructure
         public async Task SaveAsync<T>(T aggregate) where T : Aggregate, new()
         {
             var events = aggregate.GetChanges()
-                .Select(@event => new EventData(
+                .Select(@event => new EventData(                            // take the events on aggregate and map them to the ES EventData class
                     Guid.NewGuid(),
                     @event.GetType().Name,
                     true,
