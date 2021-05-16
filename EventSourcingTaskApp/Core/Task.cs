@@ -14,7 +14,11 @@ namespace EventSourcingTaskApp.Core
 
         protected override void When(object @event)
         {
-            throw new NotImplementedException();
+            switch (@event)
+            {
+                case TaskCreated x: OnCreated(x); break;
+                case TaskAssigned x: OnAssigned(x); break;
+            }
         }
 
         public void Create(Guid taskId, string title, string createdBy)
@@ -29,11 +33,38 @@ namespace EventSourcingTaskApp.Core
             });
         }
 
+        public void Assign(string assignedTo, string assignedBy)
+        {
+            if (Version == -1)
+            {
+                throw new TaskNotFoundException();
+            }
+
+            if (IsCompleted)
+            {
+                throw new TaskCompletedException();
+            }
+
+            Apply(new TaskAssigned
+            {
+                TaskId = Id,
+                AssignedBy = assignedBy,
+                AssignedTo = assignedTo
+            });
+
+        }
+
         private void OnCreated(TaskCreated @event)
         {
             Id = @event.TaskId;
             Title = @event.Title;
             Section = BoardSections.Open;
         }
+
+        private void OnAssigned(TaskAssigned @event)
+        {
+            AssignedTo = @event.AssignedTo;
+        }
+
     }
 }
