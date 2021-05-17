@@ -18,8 +18,10 @@ namespace EventSourcingTaskApp.Core
             {
                 case TaskCreated x: OnCreated(x); break;
                 case TaskAssigned x: OnAssigned(x); break;
+                case TaskMoved x: OnMoved(x); break;
             }
         }
+
 
         public void Create(Guid taskId, string title, string createdBy)
         {
@@ -54,6 +56,20 @@ namespace EventSourcingTaskApp.Core
 
         }
 
+        public void Move(BoardSections section, string movedBy)
+        {
+            if (Version == -1) throw new TaskNotFoundException();
+
+            if (IsCompleted) throw new TaskCompletedException();
+
+            Apply(new TaskMoved
+            {
+                TaskId = Id,
+                MovedBy = movedBy,
+                Section = section
+            });
+        }
+
         private void OnCreated(TaskCreated @event)
         {
             Id = @event.TaskId;
@@ -64,6 +80,11 @@ namespace EventSourcingTaskApp.Core
         private void OnAssigned(TaskAssigned @event)
         {
             AssignedTo = @event.AssignedTo;
+        }
+
+        private void OnMoved(TaskMoved @event)
+        {
+            Section = @event.Section;
         }
 
     }
