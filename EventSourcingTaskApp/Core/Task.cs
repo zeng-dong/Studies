@@ -19,6 +19,7 @@ namespace EventSourcingTaskApp.Core
                 case TaskCreated x: OnCreated(x); break;
                 case TaskAssigned x: OnAssigned(x); break;
                 case TaskMoved x: OnMoved(x); break;
+                case TaskCompleted x: OnCompleted(x); break;
             }
         }
 
@@ -70,6 +71,20 @@ namespace EventSourcingTaskApp.Core
             });
         }
 
+        public void Complete(string completedBy)
+        {
+            if (Version == -1) throw new TaskNotFoundException();
+
+
+            if (IsCompleted) throw new TaskCompletedException();
+
+            Apply(new TaskCompleted
+            {
+                TaskId = Id,
+                CompletedBy = completedBy
+            });
+        }
+
         private void OnCreated(TaskCreated @event)
         {
             Id = @event.TaskId;
@@ -86,6 +101,9 @@ namespace EventSourcingTaskApp.Core
         {
             Section = @event.Section;
         }
-
+        private void OnCompleted(TaskCompleted @event)
+        {
+            IsCompleted = true;
+        }
     }
 }
