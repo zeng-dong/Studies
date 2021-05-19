@@ -1,0 +1,12 @@
+https://dev.to/ahmetkucukoglu/event-sourcing-with-asp-net-core-01-store-3k04
+
+https://dev.to/dealeron/event-sourcing-and-the-history-of-accounting-1aah
+
+https://www.youtube.com/watch?v=xHbP3bshU3U
+A pragmatic introduction to Event Sourcing
+
+https://www.youtube.com/watch?v=LAU2gFtPC_0&list=PLAiSvujcyOkk9hr-qPYThu2tRazOyZj9l&index=1
+Event Sourcing & CQRS in C# - The Aggregate Root
+
+https://www.youtube.com/watch?v=Sopi-gI5qKU
+Getting Started with EventStore using C# and Visual Studio
