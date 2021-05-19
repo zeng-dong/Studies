@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace EventStoreConsoleApp
 {
@@ -14,12 +15,11 @@ namespace EventStoreConsoleApp
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
             IEventStoreConnection connection = EventStoreConnection.Create(new IPEndPoint(IPAddress.Loopback, 1113));
             connection.ConnectAsync();
 
             var aggregateId = Guid.NewGuid();
+            Console.WriteLine($"Aggregate ID: {aggregateId}");
             List<IEvent> events = new List<IEvent>();
 
             events.Add(new AccountCreated(aggregateId, "Bitter Bite"));
@@ -38,6 +38,37 @@ namespace EventStoreConsoleApp
                 var esDataType = new EventData(Guid.NewGuid(), evt.GetType().Name, true, jsonPayload, null);
                 connection.AppendToStreamAsync(StreamId(aggregateId), ExpectedVersion.Any, esDataType);
             }
+
+            var results = Task.Run(() =>
+                connection.ReadStreamEventsForwardAsync(StreamId(aggregateId), StreamPosition.Start, 999, false));
+            Task.WaitAll();
+            var resultsData = results.Result;
+
+            var bankState = new BankAccount();
+            foreach (var evnt in resultsData.Events)
+            {
+                var esJsonData = Encoding.UTF8.GetString(evnt.Event.Data);
+                Console.WriteLine($"state change: {evnt.Event.EventType}");
+                if (evnt.Event.EventType == "AccountCreated")
+                {
+                    var state = JsonConvert.DeserializeObject<AccountCreated>(esJsonData);
+                    bankState.Apply(state);
+                }
+                else if (evnt.Event.EventType == "FundsDespoited")
+                {
+                    var state = JsonConvert.DeserializeObject<FundsDespoited>(esJsonData);
+                    bankState.Apply(state);
+                }
+                else
+                {
+                    var state = JsonConvert.DeserializeObject<FundsWithdrawed>(esJsonData);
+                    bankState.Apply(state);
+                }
+
+                Console.WriteLine($"CurrentBalance: {bankState.CurrentBalance}");
+            }
+
+            Console.WriteLine($"Final State after replay : {bankState.CurrentBalance}");
 
             Console.ReadLine();
         }
