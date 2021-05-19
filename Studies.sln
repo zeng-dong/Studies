@@ -24,14 +24,15 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MoreEventSourcing", "MoreEventSourcing", "{5BA0226C-4C62-4C22-8269-4BDDB2476413}"
 	ProjectSection(SolutionItems) = preProject
 		about EventStoreDb.txt = about EventStoreDb.txt
+		ES and Accounting.md = ES and Accounting.md
 		jargons.txt = jargons.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FSharpFundamentals", "FSharpFundamentals", "{01EB30B3-C243-48C4-96A6-20DE9B0361BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsAndCqrs", "EsAndCqrs\EsAndCqrs.csproj", "{274039AC-744B-4935-A9D9-FFAB6D3B1E2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EsAndCqrs", "EsAndCqrs\EsAndCqrs.csproj", "{274039AC-744B-4935-A9D9-FFAB6D3B1E2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcingTaskApp", "EventSourcingTaskApp\EventSourcingTaskApp.csproj", "{22216190-491A-4C9B-967C-2188C5BEBD17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSourcingTaskApp", "EventSourcingTaskApp\EventSourcingTaskApp.csproj", "{22216190-491A-4C9B-967C-2188C5BEBD17}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DDD", "DDD", "{9FCB19D7-4DAC-4B92-A9BC-B8FDFE28A110}"
 EndProject
