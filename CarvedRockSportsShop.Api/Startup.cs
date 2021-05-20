@@ -1,16 +1,12 @@
+﻿using CarvedRock.Api.Domain;
+using CarvedRock.Api.Interfaces;
+using CarvedRock.Api.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CarvedRockSportsShop.Api
 {
@@ -26,6 +22,8 @@ namespace CarvedRockSportsShop.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IProductLogic, ProductLogic>();
+            services.AddScoped<IQuickOrderLogic, QuickOrderLogic>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -37,6 +35,8 @@ namespace CarvedRockSportsShop.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseMiddleware<CustomExceptionHandlingMiddleware>();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
