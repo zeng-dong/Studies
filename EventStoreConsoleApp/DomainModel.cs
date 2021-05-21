@@ -17,7 +17,7 @@ namespace EventStoreConsoleApp
             CurrentBalance = 0;
         }
 
-        public void Apply(FundsDespoited @event)
+        public void Apply(FundsDeposited @event)
         {
             var newTransaction = new Transaction { Id = @event.Id, Amount = @event.Amount };
             Transactions.Add(newTransaction);

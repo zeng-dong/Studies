@@ -23,11 +23,11 @@ namespace EventStoreConsoleApp
             List<IEvent> events = new List<IEvent>();
 
             events.Add(new AccountCreated(aggregateId, "Bitter Bite"));
-            events.Add(new FundsDespoited(aggregateId, 150));
-            events.Add(new FundsDespoited(aggregateId, 100));
-            events.Add(new FundsWithdrawed(aggregateId, 60));
-            events.Add(new FundsWithdrawed(aggregateId, 94));
-            events.Add(new FundsDespoited(aggregateId, 4));
+            events.Add(new FundsDeposited(aggregateId, 150));
+            events.Add(new FundsDeposited(aggregateId, 100));
+            events.Add(new FundsWithdrawed(aggregateId, 60, "bite hard drive"));
+            events.Add(new FundsWithdrawed(aggregateId, 94, "bite cpu"));
+            events.Add(new FundsDeposited(aggregateId, 4));
 
             foreach (var evt in events)
             {
@@ -56,16 +56,18 @@ namespace EventStoreConsoleApp
                 }
                 else if (evnt.Event.EventType == "FundsDespoited")
                 {
-                    var state = JsonConvert.DeserializeObject<FundsDespoited>(esJsonData);
+                    var state = JsonConvert.DeserializeObject<FundsDeposited>(esJsonData);
                     bankState.Apply(state);
                 }
                 else
                 {
                     var state = JsonConvert.DeserializeObject<FundsWithdrawed>(esJsonData);
                     bankState.Apply(state);
+                    Console.WriteLine($"transaction reason: {state.Reason}");
                 }
 
                 Console.WriteLine($"CurrentBalance: {bankState.CurrentBalance}");
+
             }
 
             Console.WriteLine($"Final State after replay : {bankState.CurrentBalance}");

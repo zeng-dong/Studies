@@ -11,6 +11,7 @@ namespace EventStoreConsoleApp
     {
         public Guid Id { get; private set; }
         public string Name { get; private set; }
+
         public AccountCreated(Guid id, string name)
         {
             Id = id;
@@ -18,12 +19,12 @@ namespace EventStoreConsoleApp
         }
     }
 
-    public class FundsDespoited : IEvent
+    public class FundsDeposited : IEvent
     {
         public Guid Id { get; private set; }
         public decimal Amount { get; private set; }
 
-        public FundsDespoited(Guid id, decimal amount)
+        public FundsDeposited(Guid id, decimal amount)
         {
             Id = id;
             Amount = amount;
@@ -34,11 +35,12 @@ namespace EventStoreConsoleApp
     {
         public Guid Id { get; private set; }
         public decimal Amount { get; private set; }
-
-        public FundsWithdrawed(Guid id, decimal amount)
+        public string Reason { get; private set; }
+        public FundsWithdrawed(Guid id, decimal amount, string reason)
         {
             Id = id;
             Amount = amount;
+            Reason = reason;
         }
     }
 }
