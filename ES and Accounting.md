@@ -14,3 +14,11 @@ You can go back and "query" the event stream to build up new projections of the 
 Imagine a banking system where the values of an account were just stored as mutable entries in a database. 
 Even ignoring the lack of an audit trail, you could never go back and ask questions like "what day do most of our transactions occur on". 
 By storing the event stream, you can answer these questions even if you never thought to ask them when you designed the system.
+
+# challenges
+## storage
+Since each event must be added to an append-only data store, the data will grow forever. Snapshots and retention policies can mitigate this but at the cost of loosing the ability to query back to the beginning of time.
+## performance
+you must "replay" each event to build up the state of the application. Typically this happens on application startup. As the event store grows, this can become a performance concern. Again, snapshots of the state can easily reduce the pain here by limiting the number of events which must be replayed.
+## reliablity
+the code which projects those events into their current state must be effectively immutable. This challenge is more fundamental to the concept of event sourcing and is more difficult to overcome.
