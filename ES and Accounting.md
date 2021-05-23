@@ -22,3 +22,11 @@ Since each event must be added to an append-only data store, the data will grow 
 you must "replay" each event to build up the state of the application. Typically this happens on application startup. As the event store grows, this can become a performance concern. Again, snapshots of the state can easily reduce the pain here by limiting the number of events which must be replayed.
 ## reliablity
 the code which projects those events into their current state must be effectively immutable. This challenge is more fundamental to the concept of event sourcing and is more difficult to overcome.
+
+# 1494 Luca Pacioli
+a friend of Leonardo da Vinci
+he concept of double-entry bookkeeping
+Each transaction would be logged along with the new balance. 
+The idea revolutionized accounting and Pacioli is known to this day as the father of modern bookkeeping. Venetian merchants could now track inventory, balances over time, and track credits and debits.
+
+# Double Entry Accounting and Event Sourcing
