@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using CarvedRock.Api.ApiModels;
+﻿using CarvedRock.Api.ApiModels;
 using CarvedRock.Api.Interfaces;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CarvedRock.Api.Domain
 {
     public class ProductLogic : IProductLogic
     {
         private readonly ILogger<ProductLogic> _logger;
-        private readonly List<string> _validCategories = new List<string> {"all", "boots", "climbing gear", "kayaks"};
+        private readonly List<string> _validCategories = new List<string> { "all", "boots", "climbing gear", "kayaks" };
 
 
         public ProductLogic(ILogger<ProductLogic> logger)
@@ -20,7 +20,7 @@ namespace CarvedRock.Api.Domain
 
         public IEnumerable<Product> GetProductsForCategory(string category)
         {
-            //_logger.LogInformation("Starting logic to get products", category);
+            _logger.LogInformation("Starting logic to get products", category);
 
             if (!_validCategories.Any(c => string.Equals(category, c, StringComparison.InvariantCultureIgnoreCase)))
             {
