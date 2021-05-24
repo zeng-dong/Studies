@@ -36,12 +36,15 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSourcingTaskApp", "EventSourcingTaskApp\EventSourcingTaskApp.csproj", "{22216190-491A-4C9B-967C-2188C5BEBD17}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DDD", "DDD", "{9FCB19D7-4DAC-4B92-A9BC-B8FDFE28A110}"
+	ProjectSection(SolutionItems) = preProject
+		Domain Events vs Integration Events.txt = Domain Events vs Integration Events.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventStoreConsoleApp", "EventStoreConsoleApp\EventStoreConsoleApp.csproj", "{5B8AFF38-E31C-4AA4-9058-21C654267257}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{B9E724E2-0C53-4FD0-9056-24D68A65BF55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarvedRockSportsShop.Api", "CarvedRockSportsShop.Api\CarvedRockSportsShop.Api.csproj", "{A519BA2D-3F89-4307-B632-568AED9FD81B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarvedRockSportsShop.Api", "CarvedRockSportsShop.Api\CarvedRockSportsShop.Api.csproj", "{A519BA2D-3F89-4307-B632-568AED9FD81B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,10 @@
+link: https://cfrenzel.com/domain-events-efcore-mediatr/
+
+DDD concept of Domain Events.
+* These events originate in the Domain Model and are broadcast within a Bounded Context. 
+* These are not events used directly for integration.
+
+
+
+# Domain Events vs. Integration Events in Domain-Driven Design and microservices architectures
+* link https://devblogs.microsoft.com/cesardelatorre/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/
