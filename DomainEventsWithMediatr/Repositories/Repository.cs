@@ -31,7 +31,7 @@ namespace DomainEventsWithMediatr.Repositories
         public async Task Save(TEntity entity)
         {
             _entities[entity.Id] = entity;
-            //ConsoleWriter.FromRepositories("[DATABASE] Saved entity {0}", entity.Id.ToString());
+            ConsoleWriter.FromRepositories("[DATABASE] Saved entity {0}", entity.Id.ToString());
 
             var eventsCopy = entity.Events.ToArray();
             entity.Events.Clear();
