@@ -1,4 +1,4 @@
-﻿using System;
+﻿using GettingStarted.UI;
 
 namespace GettingStarted
 {
@@ -6,7 +6,7 @@ namespace GettingStarted
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            SneakPeekApp.Run(args);
         }
     }
 }
