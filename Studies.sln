@@ -46,7 +46,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{B9E724
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarvedRockSportsShop.Api", "CarvedRockSportsShop.Api\CarvedRockSportsShop.Api.csproj", "{A519BA2D-3F89-4307-B632-568AED9FD81B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainEventsWithMediatr", "DomainEventsWithMediatr\DomainEventsWithMediatr.csproj", "{A58422FF-74B0-4B4D-A540-C5EF6F5C8488}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainEventsWithMediatr", "DomainEventsWithMediatr\DomainEventsWithMediatr.csproj", "{A58422FF-74B0-4B4D-A540-C5EF6F5C8488}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityframeworkcoreThree", "EntityframeworkcoreThree", "{5470B66E-F115-4BED-A933-C1F42C26AB45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TablePerHierarchy", "TablePerHierarchy\TablePerHierarchy.csproj", "{EDBB1242-C76B-450F-8A40-3D5B279B1F33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -94,6 +98,10 @@ Global
 		{A58422FF-74B0-4B4D-A540-C5EF6F5C8488}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A58422FF-74B0-4B4D-A540-C5EF6F5C8488}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A58422FF-74B0-4B4D-A540-C5EF6F5C8488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDBB1242-C76B-450F-8A40-3D5B279B1F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDBB1242-C76B-450F-8A40-3D5B279B1F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDBB1242-C76B-450F-8A40-3D5B279B1F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDBB1242-C76B-450F-8A40-3D5B279B1F33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +121,8 @@ Global
 		{5B8AFF38-E31C-4AA4-9058-21C654267257} = {5BA0226C-4C62-4C22-8269-4BDDB2476413}
 		{A519BA2D-3F89-4307-B632-568AED9FD81B} = {B9E724E2-0C53-4FD0-9056-24D68A65BF55}
 		{A58422FF-74B0-4B4D-A540-C5EF6F5C8488} = {9FCB19D7-4DAC-4B92-A9BC-B8FDFE28A110}
+		{5470B66E-F115-4BED-A933-C1F42C26AB45} = {7EF55878-1ECF-4AB6-A8E2-229D5F15FCCC}
+		{EDBB1242-C76B-450F-8A40-3D5B279B1F33} = {5470B66E-F115-4BED-A933-C1F42C26AB45}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1880E68-29D6-48A6-9595-E961759756D1}
