@@ -52,6 +52,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityframeworkcoreThree", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TablePerHierarchy", "TablePerHierarchy\TablePerHierarchy.csproj", "{EDBB1242-C76B-450F-8A40-3D5B279B1F33}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityframeworkcoreFive", "EntityframeworkcoreFive", "{7D6EBF39-6C44-4261-8305-1AFA368896B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingStarted", "GettingStarted\GettingStarted.csproj", "{DCDBE748-5DBD-4FFC-89C5-1C7045D25118}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -102,6 +106,10 @@ Global
 		{EDBB1242-C76B-450F-8A40-3D5B279B1F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDBB1242-C76B-450F-8A40-3D5B279B1F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDBB1242-C76B-450F-8A40-3D5B279B1F33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCDBE748-5DBD-4FFC-89C5-1C7045D25118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCDBE748-5DBD-4FFC-89C5-1C7045D25118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCDBE748-5DBD-4FFC-89C5-1C7045D25118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCDBE748-5DBD-4FFC-89C5-1C7045D25118}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +131,8 @@ Global
 		{A58422FF-74B0-4B4D-A540-C5EF6F5C8488} = {9FCB19D7-4DAC-4B92-A9BC-B8FDFE28A110}
 		{5470B66E-F115-4BED-A933-C1F42C26AB45} = {7EF55878-1ECF-4AB6-A8E2-229D5F15FCCC}
 		{EDBB1242-C76B-450F-8A40-3D5B279B1F33} = {5470B66E-F115-4BED-A933-C1F42C26AB45}
+		{7D6EBF39-6C44-4261-8305-1AFA368896B9} = {7EF55878-1ECF-4AB6-A8E2-229D5F15FCCC}
+		{DCDBE748-5DBD-4FFC-89C5-1C7045D25118} = {7D6EBF39-6C44-4261-8305-1AFA368896B9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1880E68-29D6-48A6-9595-E961759756D1}
