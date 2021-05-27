@@ -2,7 +2,7 @@
 
 namespace TablePerHierarchy.AbstractBaseClass
 {
-    public class ExplicitDerivedTypesDbContext : DbContext
+    public class AbstractBaseExplicitDerivedTypesDbContext : DbContext
     {
         public DbSet<MobileContract> MobileContracts { get; set; }
         public DbSet<TvContract> TvContracts { get; set; }

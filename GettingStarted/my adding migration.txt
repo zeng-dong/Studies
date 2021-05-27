@@ -56,3 +56,28 @@ Build started...
 Build succeeded.
 Applying migration '20210527021650_init'.
 Done.
+
+TPH
+====
+1. add migration 
+dotnet ef migrations add init --context ImplictDerivedTypesDbContext
+
+2. update
+dotnet ef database update init --context ImplictDerivedTypesDbContext
+Build started...
+Build succeeded.
+Applying migration '20210527140241_init'.
+Done.
+
+TPH - explict
+=============
+1.  dotnet ef migrations add init --context ExplicitDerivedTypesDbContext
+Build started...
+Build succeeded.
+Done. To undo this action, use 'ef migrations remove'
+
+2. dotnet ef database update init --context ExplicitDerivedTypesDbContext
+Build started...
+Build succeeded.
+Applying migration '20210527234850_init'.
+Done.
