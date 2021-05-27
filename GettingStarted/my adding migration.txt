@@ -1,0 +1,58 @@
+﻿I ran 'add-migration init -Context SamuraiContext' with Default project: Tools\EntityframeworkcoreFive\GettingStarted, the result is:
+Build started...
+Build failed.
+
+So I went to command line, 
+1. dotnet ef --version
+Entity Framework Core .NET Command-line Tools
+3.1.9
+
+2. dotnet tool update --global dotnet-ef
+Tool 'dotnet-ef' was successfully updated from version '3.1.9' to version '5.0.6'.
+
+3. ❯ dotnet ef --version
+Entity Framework Core .NET Command-line Tools
+5.0.6
+
+4. ❯ dotnet add package Microsoft.EntityFrameworkCore.Design
+  Determining projects to restore...
+  Writing C:\Users\huubaba\AppData\Local\Temp\tmpB8E.tmp
+info : Adding PackageReference for package 'Microsoft.EntityFrameworkCore.Design' into project 'C:\dev\githubrepos\Studies\GettingStarted\GettingStarted.csproj'.
+info :   GET https://api.nuget.org/v3/registration5-gz-semver2/microsoft.entityframeworkcore.design/index.json
+info :   OK https://api.nuget.org/v3/registration5-gz-semver2/microsoft.entityframeworkcore.design/index.json 358ms
+info : Restoring packages for C:\dev\githubrepos\Studies\GettingStarted\GettingStarted.csproj...
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.design/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.design/index.json 229ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.design/5.0.6/microsoft.entityframeworkcore.design.5.0.6.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.design/5.0.6/microsoft.entityframeworkcore.design.5.0.6.nupkg 192ms
+info : Installed Microsoft.EntityFrameworkCore.Design 5.0.6 from https://api.nuget.org/v3/index.json with content hash 2hjMovtUx3zvMMJDNjFFtYbiYRg7SNAyRe3JQzCYy7kXfADcyr7tuf9meq0lxGZBf8qvilYcDaBj5M+iq90krQ==.
+info : Package 'Microsoft.EntityFrameworkCore.Design' is compatible with all the specified frameworks in project 'C:\dev\githubrepos\Studies\GettingStarted\GettingStarted.csproj'.
+info : PackageReference for package 'Microsoft.EntityFrameworkCore.Design' version '5.0.6' added to file 'C:\dev\githubrepos\Studies\GettingStarted\GettingStarted.csproj'.
+info : Committing restore...
+info : Generating MSBuild file C:\dev\githubrepos\Studies\GettingStarted\obj\GettingStarted.csproj.nuget.g.props.
+info : Writing assets file to disk. Path: C:\dev\githubrepos\Studies\GettingStarted\obj\project.assets.json
+log  : Restored C:\dev\githubrepos\Studies\GettingStarted\GettingStarted.csproj (in 898 ms).
+
+5. ❯ dotnet ef migrations add init --context SamuraiContext
+Build started...
+Build succeeded.
+Done. To undo this action, use 'ef migrations remove'
+
+
+update
+======
+I ran 
+PM> Update-Database
+Build started...
+Build failed.
+PM> Update-Database init
+Build started...
+Build failed.
+
+so I went to command line and ran:
+⚡ huubaba@DESKTOP-QB0EFH1  C:\dev\githubrepos\Studies\GettingStarted   master ≣ +1 ~1 -0 !                                                                                                                                                                                                                    [21:16]
+❯ dotnet ef database update init
+Build started...
+Build succeeded.
+Applying migration '20210527021650_init'.
+Done.
