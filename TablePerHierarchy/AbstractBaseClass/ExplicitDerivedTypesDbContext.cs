@@ -1,7 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace TablePerHierarchy.AbstractBaseClass
 {
@@ -25,6 +22,13 @@ namespace TablePerHierarchy.AbstractBaseClass
             //.HasValue<TvContract>(2)
             //.HasValue<BroadbandContract>(3);
             ;
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(
+                "Data Source= (localdb)\\MSSQLLocalDB; Initial Catalog=TPH_Explicit");
+
         }
     }
 }
