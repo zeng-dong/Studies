@@ -81,3 +81,45 @@ Build started...
 Build succeeded.
 Applying migration '20210527234850_init'.
 Done.
+
+
+Samurai second migration after adding m2m
+=========================================
+1. 
+❯ dotnet ef migrations add m2mWithBattle --context SamuraiContext
+Build started...
+Build succeeded.
+Done. To undo this action, use 'ef migrations remove'
+
+2. 
+dotnet ef database update m2mWithBattle --context SamuraiContext
+Build started...
+Build succeeded.
+Applying migration '20210528005117_m2mWithBattle'.
+Done.
+
+
+Samurai third migration after adding m2m payload (explicit/manual join class BattleSamurai)
+===========================================================================================
+1. 
+⚡ huubaba@DESKTOP-QB0EFH1  C:\dev\githubrepos\Studies\GettingStarted   master ↑1 +0 ~1 -0 !               [08:59]
+❯ dotnet ef migrations add m2mPayload --context SamuraiContext
+Build started...
+Build succeeded.
+Done. To undo this action, use 'ef migrations remove'
+
+2. 
+❯ dotnet ef migrations list
+Build started...
+Build succeeded.
+20210527021650_init
+20210528005117_m2mWithBattle
+20210528154935_m2mPayload (Pending)
+
+3.
+⚡ huubaba@DESKTOP-QB0EFH1  C:\dev\githubrepos\Studies\GettingStarted   master ↑1 +3 ~3 -0 !                                                                                                                                                                                                                   [11:03]
+❯ dotnet ef database update m2mPayload --context SamuraiContext
+Build started...
+Build succeeded.
+Applying migration '20210528154935_m2mPayload'.
+Done.
