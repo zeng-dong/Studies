@@ -1,4 +1,5 @@
-﻿using TablePerHierarchy.ConcreteBaseClass;
+﻿using System;
+using TablePerHierarchy.ConcreteBaseClass;
 
 namespace TablePerHierarchy
 {
@@ -6,7 +7,13 @@ namespace TablePerHierarchy
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Explicit");
             ExplicitApp.Run();
+
+            Console.WriteLine("Implicit");
+            ImplicitApp.Run();
+
+            Console.ReadLine();
         }
     }
 }

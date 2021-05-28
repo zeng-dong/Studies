@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace TablePerHierarchy.ConcreteBaseClass
 {
-    public class ExplicitApp
+    public class ImplicitApp
     {
-        private static ExplicitDerivedTypesDbContext _context = new ExplicitDerivedTypesDbContext();
+        private static ImplictDerivedTypesDbContext _context = new ImplictDerivedTypesDbContext();
 
         public static void Run()
         {
@@ -43,7 +43,7 @@ namespace TablePerHierarchy.ConcreteBaseClass
         private static void GetContracts()
         {
             var contracts = _context.Contracts
-                .TagWith("Explicit GetContracts()")
+                .TagWith("Implicit GetContracts()")
                 .ToList();
 
             foreach (var contract in contracts)
