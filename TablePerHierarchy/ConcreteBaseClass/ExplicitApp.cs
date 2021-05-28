@@ -22,8 +22,11 @@ namespace TablePerHierarchy.ConcreteBaseClass
             var contract = new Contract { Charge = 100, Months = 12, StartDate = DateTime.Now };
             _context.Contracts.Add(contract);
 
-            var mobile = new MobileContract { Charge = 200, Months = 13, StartDate = DateTime.Now, MobileNumber = "713" };
+            var mobile = new MobileContract { Charge = 200, Months = 13, StartDate = DateTime.Now, MobileNumber = "713-c" };
             _context.Contracts.Add(mobile);
+
+            mobile = new MobileContract { Charge = 200, Months = 13, StartDate = DateTime.Now, MobileNumber = "713-mc" };
+            _context.MobileContracts.Add(mobile);
 
             var broadband = new BroadBandContract
             {
@@ -32,10 +35,10 @@ namespace TablePerHierarchy.ConcreteBaseClass
                 StartDate = DateTime.Now,
                 DownloadSpeed = 555
             };
-            _context.Add(broadband);
+            _context.BroadBandContracts.Add(broadband);
 
             var tv = new TvContract { Charge = 400, Months = 15, StartDate = DateTime.Now, PackageType = PackageType.L };
-            _context.Add(tv);
+            _context.TvContracts.Add(tv);
 
             _context.SaveChanges();
 
