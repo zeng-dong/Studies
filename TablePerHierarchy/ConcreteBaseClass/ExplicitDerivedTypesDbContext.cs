@@ -12,8 +12,9 @@ namespace TablePerHierarchy.ConcreteBaseClass
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-                "Data Source= (localdb)\\MSSQLLocalDB; Initial Catalog=TPH_Explicit");
+                "Data Source= (localdb)\\MSSQLLocalDB; Initial Catalog=TPH_Explicit")
 
+            ;
             // base.OnConfiguring(optionsBuilder);          /// the base method won't do anything more for you
         }
 

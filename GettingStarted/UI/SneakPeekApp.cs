@@ -1,5 +1,6 @@
 ﻿using GettingStarted.Data;
 using GettingStarted.Domain;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 
@@ -13,8 +14,8 @@ namespace GettingStarted.UI
         {
             _context.Database.EnsureCreated();
             GetSamurais("Before Add:");
-            AddSamurai();
-            GetSamurais("After Add:");
+            //AddSamurai();
+            //GetSamurais("After Add:");
             Console.Write("Press any key...");
             Console.ReadKey();
         }
@@ -27,7 +28,9 @@ namespace GettingStarted.UI
         }
         private static void GetSamurais(string text)
         {
-            var samurais = _context.Samurais.ToList();
+            var samurais = _context.Samurais
+                .TagWith("SneakPeakApp GetSamurais()")
+                .ToList();
             Console.WriteLine($"{text}: Samurai count is {samurais.Count}");
             foreach (var samurai in samurais)
             {
