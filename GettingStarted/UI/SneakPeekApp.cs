@@ -13,11 +13,26 @@ namespace GettingStarted.UI
         public static void Run(string[] args)
         {
             _context.Database.EnsureCreated();
-            GetSamurais("Before Add:");
+
+            // see bulk operation
+            AddSamuraisByName("S1", "S2", "S3", "S4");
+
+            //GetSamurais("Before Add:");
             //AddSamurai();
-            //GetSamurais("After Add:");
+
+            GetSamurais("After Add:");
             Console.Write("Press any key...");
             Console.ReadKey();
+        }
+
+        private static void AddSamuraisByName(params string[] names)
+        {
+            foreach (var name in names)
+            {
+                _context.Samurais.Add(new Samurai { Name = name });
+            }
+
+            _context.SaveChanges();
         }
 
         private static void AddSamurai()

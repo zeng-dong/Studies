@@ -21,6 +21,8 @@ namespace GettingStarted.Data
                 //.LogTo(_writer.WriteLine)                  // delegate to StreamWriter.WriteLine
                 //.LogTo(log => Debug.WriteLine(log))        // lambda expression for Debug.WriteLine 
                 .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name }, LogLevel.Information)
+                //.LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name })
+                .EnableSensitiveDataLogging()
                 ;
         }
 
