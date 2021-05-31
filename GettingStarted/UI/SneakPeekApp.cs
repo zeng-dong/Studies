@@ -52,5 +52,11 @@ namespace GettingStarted.UI
                 Console.WriteLine(samurai.Name);
             }
         }
+
+        private static void QueryFilters()
+        {
+            var filter = "J%";
+            var samurais = _context.Samurais.Where(s => EF.Functions.Like(s.Name, filter)).ToList();
+        }
     }
 }
