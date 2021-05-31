@@ -2,6 +2,7 @@
 using GettingStarted.Domain;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace GettingStarted.UI
@@ -57,6 +58,27 @@ namespace GettingStarted.UI
         {
             var filter = "J%";
             var samurais = _context.Samurais.Where(s => EF.Functions.Like(s.Name, filter)).ToList();
+        }
+
+        private static void QueryAndUpdateBattles_Disconnected()
+        {
+            List<Battle> disconnectedBattles;
+            using (var context1 = new SamuraiContext())
+            {
+                disconnectedBattles = _context.Battles.ToList();
+            } //context1 is disposed
+
+            disconnectedBattles.ForEach(b =>
+            {
+                b.StartDate = new DateTime(1570, 01, 01);
+                b.EndDate = new DateTime(1570, 12, 1);
+            });
+
+            using (var context2 = new SamuraiContext())
+            {
+                context2.UpdateRange(disconnectedBattles);
+                context2.SaveChanges();
+            }
         }
     }
 }
