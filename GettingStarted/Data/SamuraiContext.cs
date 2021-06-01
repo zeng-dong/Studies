@@ -40,5 +40,14 @@ namespace GettingStarted.Data
              .HasDefaultValueSql("getdate()");
 
         }
+
+        /// No Track Queries and DbContext\
+        /// var entities = _context.SomeSet.AsNoTracking()         // returns query, not dbset
+        ///                     .FirstOrDefault();
+        /// or in DbContext ctor:
+        /// public ctor(){
+        ///   ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;             // .TrackAll is the default
+        /// }
+
     }
 }
