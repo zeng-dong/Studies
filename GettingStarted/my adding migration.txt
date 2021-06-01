@@ -123,3 +123,10 @@ Build started...
 Build succeeded.
 Applying migration '20210528154935_m2mPayload'.
 Done.
+
+
+TPH Account and manual config HasDiscriminator
+==============================================
+1. dotnet ef migrations add accountHierarchy --context ExplicitDerivedTypesDbContext
+
+2. dotnet ef database update accountHierarchy --context ExplicitDerivedTypesDbContext

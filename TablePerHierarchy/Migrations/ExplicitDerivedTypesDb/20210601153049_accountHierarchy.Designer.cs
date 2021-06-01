@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TablePerHierarchy.ConcreteBaseClass;
 
 namespace TablePerHierarchy.Migrations.ExplicitDerivedTypesDb
 {
     [DbContext(typeof(ExplicitDerivedTypesDbContext))]
-    partial class ExplicitDerivedTypesDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210601153049_accountHierarchy")]
+    partial class accountHierarchy
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
