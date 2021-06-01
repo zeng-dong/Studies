@@ -11,11 +11,13 @@ namespace TablePerHierarchy
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Explicit");
-            ExplicitApp.Run();
+            //Console.WriteLine("Explicit");
+            //ExplicitApp.Run();
+            //
+            //Console.WriteLine("Implicit");
+            //ImplicitApp.Run();
 
-            Console.WriteLine("Implicit");
-            ImplicitApp.Run();
+            AccountApp.Run();
 
             Console.ReadLine();
         }

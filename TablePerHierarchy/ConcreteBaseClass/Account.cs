@@ -6,6 +6,7 @@ namespace TablePerHierarchy.ConcreteBaseClass
     {
         public Guid Id { get; set; }
         public string Name { get; private set; }
+        public bool IsPosting { get; private set; }
 
         public Account(string name)
         {
