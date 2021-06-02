@@ -61,13 +61,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Marketplace-HandsOn-DDD", "
 		notes.md = notes.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marketplace", "Marketplace\Marketplace.csproj", "{E4B8210A-5272-485B-A0B6-69729AB1478C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marketplace", "Marketplace\Marketplace.csproj", "{E4B8210A-5272-485B-A0B6-69729AB1478C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marketplace.Domain", "Marketplace.Domain\Marketplace.Domain.csproj", "{067B5C7C-B0F3-479D-95C6-F63D93ABFEA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marketplace.Domain", "Marketplace.Domain\Marketplace.Domain.csproj", "{067B5C7C-B0F3-479D-95C6-F63D93ABFEA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marketplace.Tests", "Marketplace.Tests\Marketplace.Tests.csproj", "{35347BD3-B426-40AB-BE95-39239F2EBAF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marketplace.Tests", "Marketplace.Tests\Marketplace.Tests.csproj", "{35347BD3-B426-40AB-BE95-39239F2EBAF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marketplace.Framework", "Marketplace.Framework\Marketplace.Framework.csproj", "{2A09A773-5098-435A-8B90-C8AA534071F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marketplace.Framework", "Marketplace.Framework\Marketplace.Framework.csproj", "{2A09A773-5098-435A-8B90-C8AA534071F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspnetcoreThree", "AspnetcoreThree", "{99C3C0D0-5CF7-4E97-81D0-21965CCF0098}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspnetcoreInDotnetFive", "AspnetcoreInDotnetFive", "{7BB5B77B-E805-4469-B673-864F54AB9C07}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspnetcoreInDotnetSix", "AspnetcoreInDotnetSix", "{87812BFC-912E-4B40-9835-ADA3F9903AFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cachings.Aspnetcore.DotnetFive", "Cachings.Aspnetcore.DotnetFive\Cachings.Aspnetcore.DotnetFive.csproj", "{D0BDA5A8-9D71-455F-B90C-E3EC168056A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cachings.Aspnetcore.DotnetFive.Api", "Cachings.Aspnetcore.DotnetFive.Api\Cachings.Aspnetcore.DotnetFive.Api.csproj", "{292B4C0B-900B-4CF3-8099-6A2E33C39FCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -139,6 +149,14 @@ Global
 		{2A09A773-5098-435A-8B90-C8AA534071F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A09A773-5098-435A-8B90-C8AA534071F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A09A773-5098-435A-8B90-C8AA534071F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0BDA5A8-9D71-455F-B90C-E3EC168056A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0BDA5A8-9D71-455F-B90C-E3EC168056A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0BDA5A8-9D71-455F-B90C-E3EC168056A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0BDA5A8-9D71-455F-B90C-E3EC168056A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{292B4C0B-900B-4CF3-8099-6A2E33C39FCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{292B4C0B-900B-4CF3-8099-6A2E33C39FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{292B4C0B-900B-4CF3-8099-6A2E33C39FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{292B4C0B-900B-4CF3-8099-6A2E33C39FCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -167,6 +185,8 @@ Global
 		{067B5C7C-B0F3-479D-95C6-F63D93ABFEA2} = {2847B02E-0F99-44B0-A2C1-56C976882A5B}
 		{35347BD3-B426-40AB-BE95-39239F2EBAF3} = {2847B02E-0F99-44B0-A2C1-56C976882A5B}
 		{2A09A773-5098-435A-8B90-C8AA534071F8} = {2847B02E-0F99-44B0-A2C1-56C976882A5B}
+		{D0BDA5A8-9D71-455F-B90C-E3EC168056A7} = {7BB5B77B-E805-4469-B673-864F54AB9C07}
+		{292B4C0B-900B-4CF3-8099-6A2E33C39FCE} = {7BB5B77B-E805-4469-B673-864F54AB9C07}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1880E68-29D6-48A6-9595-E961759756D1}

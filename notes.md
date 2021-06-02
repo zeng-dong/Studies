@@ -20,3 +20,5 @@ Context, and Context Map are the essential parts of DDD, I still believe that so
 patterns are useful and bring clarity and common language for the implementation.
 
 ### Entities
+
+### Value objects
