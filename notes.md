@@ -22,3 +22,6 @@ patterns are useful and bring clarity and common language for the implementation
 ### Entities
 
 ### Value objects
+characteristics of value objects as expressiveness and strong encapsulation
+* Fundamentally, value objects allow declaring entity properties with explicit types that use Ubiquitous Language. 
+* Besides, such objects can explicitly define how they can be created and what operations can be performed within and between them.
