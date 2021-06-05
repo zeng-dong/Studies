@@ -23,7 +23,7 @@ namespace EventSourcing
 
         public void Save(WarehouseProduct warehouseProduct)
         {
-            _inMemoryStream[warehouseProduct.Sku] = warehouseProduct.GetEvents();
+            //_inMemoryStream[warehouseProduct.Sku] = warehouseProduct.GetEvents();
         }
     }
 }

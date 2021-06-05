@@ -20,12 +20,12 @@ namespace EventSourcing
 
         public void ShipProduct(int quantity)
         {
-            if (quantity > _currentState.QuantityOnHand)
-            {
-                throw new InvalidDomainException("Ah ... we don't have that many to ship");
-            }
-
-            AddEvent(new ProductShipped(Sku, quantity, DateTime.UtcNow));
+            //if (quantity > _currentState.QuantityOnHand)
+            //{
+            //    throw new InvalidDomainException("Ah ... we don't have that many to ship");
+            //}
+            //
+            //AddEvent(new ProductShipped(Sku, quantity, DateTime.UtcNow));
         }
 
         public void ReceiveProduct(int quantity)
@@ -35,12 +35,12 @@ namespace EventSourcing
 
         public void AdjustInventory(int quantity, string reason)
         {
-            if (_currentState.QuantityOnHand + quantity < 0)
-            {
-                throw new InvalidDomainException("Cannot adjust to a negative quantity ");
-            }
-
-            AddEvent(new InventoryAdjusted(Sku, quantity, reason, DateTime.UtcNow));
+            //if (_currentState.QuantityOnHand + quantity < 0)
+            //{
+            //    throw new InvalidDomainException("Cannot adjust to a negative quantity ");
+            //}
+            //
+            //AddEvent(new InventoryAdjusted(Sku, quantity, reason, DateTime.UtcNow));
         }
 
         internal void AddEvent(IEvent evnt)
