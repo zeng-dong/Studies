@@ -8,4 +8,8 @@
     <PackageReference Include="CSharpFunctionalExtensions" Version="2.15.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Marketplace.Framework\Marketplace.Framework.csproj" />
+  </ItemGroup>
+
 </Project>
