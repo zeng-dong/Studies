@@ -8,8 +8,4 @@
     <PackageReference Include="CSharpFunctionalExtensions" Version="2.15.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UsingFunctionalExtensions\" />
-  </ItemGroup>
-
 </Project>
