@@ -75,9 +75,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspnetcoreInDotnetFive", "A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspnetcoreInDotnetSix", "AspnetcoreInDotnetSix", "{87812BFC-912E-4B40-9835-ADA3F9903AFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cachings.Aspnetcore.DotnetFive", "Cachings.Aspnetcore.DotnetFive\Cachings.Aspnetcore.DotnetFive.csproj", "{D0BDA5A8-9D71-455F-B90C-E3EC168056A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cachings.Aspnetcore.DotnetFive", "Cachings.Aspnetcore.DotnetFive\Cachings.Aspnetcore.DotnetFive.csproj", "{D0BDA5A8-9D71-455F-B90C-E3EC168056A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cachings.Aspnetcore.DotnetFive.Api", "Cachings.Aspnetcore.DotnetFive.Api\Cachings.Aspnetcore.DotnetFive.Api.csproj", "{292B4C0B-900B-4CF3-8099-6A2E33C39FCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cachings.Aspnetcore.DotnetFive.Api", "Cachings.Aspnetcore.DotnetFive.Api\Cachings.Aspnetcore.DotnetFive.Api.csproj", "{292B4C0B-900B-4CF3-8099-6A2E33C39FCE}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SqlServer", "SqlServer\SqlServer.sqlproj", "{068CE79A-28DD-428C-8B2C-58C681DA1CE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -157,6 +159,12 @@ Global
 		{292B4C0B-900B-4CF3-8099-6A2E33C39FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{292B4C0B-900B-4CF3-8099-6A2E33C39FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{292B4C0B-900B-4CF3-8099-6A2E33C39FCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{068CE79A-28DD-428C-8B2C-58C681DA1CE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{068CE79A-28DD-428C-8B2C-58C681DA1CE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{068CE79A-28DD-428C-8B2C-58C681DA1CE5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{068CE79A-28DD-428C-8B2C-58C681DA1CE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{068CE79A-28DD-428C-8B2C-58C681DA1CE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{068CE79A-28DD-428C-8B2C-58C681DA1CE5}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -187,6 +195,7 @@ Global
 		{2A09A773-5098-435A-8B90-C8AA534071F8} = {2847B02E-0F99-44B0-A2C1-56C976882A5B}
 		{D0BDA5A8-9D71-455F-B90C-E3EC168056A7} = {7BB5B77B-E805-4469-B673-864F54AB9C07}
 		{292B4C0B-900B-4CF3-8099-6A2E33C39FCE} = {7BB5B77B-E805-4469-B673-864F54AB9C07}
+		{068CE79A-28DD-428C-8B2C-58C681DA1CE5} = {7EF55878-1ECF-4AB6-A8E2-229D5F15FCCC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1880E68-29D6-48A6-9595-E961759756D1}
