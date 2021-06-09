@@ -59,5 +59,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Northwind-objects-and-data.sql" />
+    <None Include="northwind-creation.sql" />
   </ItemGroup>
 </Project>
