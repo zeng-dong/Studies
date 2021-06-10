@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Accounting.Domain
+﻿namespace Accounting.Domain
 {
-    class HeadingAccount
+    /// <summary>
+    /// can contain a collection of child HeadingAccounts, and a collection of PostingAccounts
+    /// </summary>
+    public class HeadingAccount
     {
+
+
     }
 }
