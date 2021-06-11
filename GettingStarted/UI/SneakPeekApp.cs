@@ -30,7 +30,7 @@ namespace GettingStarted.UI
         {
             foreach (var name in names)
             {
-                _context.Samurais.Add(new Samurai { Name = name });
+                _context.Samurais.Add(new Samurai { FirstName = name });
             }
 
             _context.SaveChanges();
@@ -38,7 +38,7 @@ namespace GettingStarted.UI
 
         private static void AddSamurai()
         {
-            var samurai = new Samurai { Name = "Judie" };
+            var samurai = new Samurai { FirstName = "Judie" };
             _context.Samurais.Add(samurai);
             _context.SaveChanges();
         }
@@ -50,14 +50,14 @@ namespace GettingStarted.UI
             Console.WriteLine($"{text}: Samurai count is {samurais.Count}");
             foreach (var samurai in samurais)
             {
-                Console.WriteLine(samurai.Name);
+                Console.WriteLine(samurai.FirstName);
             }
         }
 
         private static void QueryFilters()
         {
             var filter = "J%";
-            var samurais = _context.Samurais.Where(s => EF.Functions.Like(s.Name, filter)).ToList();
+            var samurais = _context.Samurais.Where(s => EF.Functions.Like(s.FirstName, filter)).ToList();
         }
 
         private static void QueryAndUpdateBattles_Disconnected()
