@@ -1,0 +1,3 @@
+﻿1. I set this project as startup project
+2. Add-Migration InitialCreate -Project Mapping -Context SamuraiContext
+3. Update-database
