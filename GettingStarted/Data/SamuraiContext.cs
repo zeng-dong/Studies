@@ -39,7 +39,7 @@ namespace GettingStarted.Data
              .Property(bs => bs.DateJoined)
              .HasDefaultValueSql("getdate()");
 
-            modelBuilder.Entity<Samurai>().OwnsOne(s => s.FullName).Property(f => f.f;
+            modelBuilder.Entity<Samurai>().OwnsOne(s => s.FullName);
         }
 
         /// No Track Queries and DbContext\
