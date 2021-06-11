@@ -6,7 +6,7 @@ namespace Mapping.Domain
     {
         public Samurai()
         {
-
+            SamuraiBattles = new List<SamuraiBattle>();
         }
 
         public int Id { get; set; }
