@@ -11,9 +11,11 @@ namespace Mapping
 
         static void Main(string[] args)
         {
-            PrePopulateSamuraisAndBattles();
+            //PrePopulateSamuraisAndBattles();
 
-            JoinBattleAndSamurai();
+            //JoinBattleAndSamurai();
+            //EnlistSamuraiIntoABattle();
+            EnlistSamuraiIntoABattleUntracked();
 
         }
 
@@ -24,6 +26,25 @@ namespace Mapping
             _context.SaveChanges();
         }
 
+        private static void EnlistSamuraiIntoABattle()
+        {
+            var battle = _context.Battles.Find(1);
+            battle.SamuraiBattles.Add(new SamuraiBattle { SamuraiId = 3 });
+            _context.SaveChanges();
+        }
+
+        private static void EnlistSamuraiIntoABattleUntracked()
+        {
+            Battle battle;
+            using (var separateOperation = new SamuraiContext())
+            {
+                battle = separateOperation.Battles.Find(1);
+            }
+            battle.SamuraiBattles.Add(new SamuraiBattle { SamuraiId = 2 });
+            _context.Battles.Attach(battle);
+            _context.ChangeTracker.DetectChanges(); //here to show you debugging info
+            _context.SaveChanges();
+        }
 
         private static void PrePopulateSamuraisAndBattles()
         {
