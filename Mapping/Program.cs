@@ -101,6 +101,54 @@ namespace Mapping
              */
 
         }
+
+        private static void GetBattlesForSamuraiInMemory()
+        {
+            var battle = _context.Battles.Find(1);
+            _context.Entry(battle).Collection(b => b.SamuraiBattles).Query().Include(sb => sb.Samurai).Load();
+
+        }
+
+        #endregion
+
+        #region remove join of m2m
+        private static void RemoveJoinBetweenSamuraiAndBattleSimple()
+        {
+            var join = new SamuraiBattle { BattleId = 1, SamuraiId = 8 };
+            _context.Remove(join);
+            _context.SaveChanges();
+        }
+
+        private static void RemoveBattleFromSamurai()
+        {
+            //Goal:Remove join between Shichirōji(Id=3) and Battle of Okehazama (Id=1)
+            var samurai = _context.Samurais.Include(s => s.SamuraiBattles)
+                                           .ThenInclude(sb => sb.Battle)
+                                  .SingleOrDefault(s => s.Id == 3);
+            var sbToRemove = samurai.SamuraiBattles.SingleOrDefault(sb => sb.BattleId == 1);
+            samurai.SamuraiBattles.Remove(sbToRemove); //remove via List<T>
+                                                       //_context.Remove(sbToRemove); //remove using DbContext
+            _context.ChangeTracker.DetectChanges(); //here for debugging
+            _context.SaveChanges();
+        }
+
+        private static void RemoveBattleFromSamuraiWhenDisconnected()
+        {
+            //Goal:Remove join between Shichirōji(Id=3) and Battle of Okehazama (Id=1)
+            Samurai samurai;
+            using (var separateOperation = new SamuraiContext())
+            {
+                samurai = separateOperation.Samurais.Include(s => s.SamuraiBattles)
+                                                    .ThenInclude(sb => sb.Battle)
+                                           .SingleOrDefault(s => s.Id == 3);
+            }
+            var sbToRemove = samurai.SamuraiBattles.SingleOrDefault(sb => sb.BattleId == 1);
+            samurai.SamuraiBattles.Remove(sbToRemove);
+            //_context.Attach(samurai);
+            //_context.ChangeTracker.DetectChanges();
+            _context.Remove(sbToRemove);
+            _context.SaveChanges();
+        }
         #endregion
 
         private static void PrePopulateSamuraisAndBattles()

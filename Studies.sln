@@ -85,6 +85,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accounting", "Accounting\Ac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapping", "Mapping\Mapping.csproj", "{497D70B6-5477-499B-BDAF-198B623A2536}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DddEnittyframeworkcoreThree.PreservingEncapsulation", "DddEnittyframeworkcoreThree.PreservingEncapsulation\DddEnittyframeworkcoreThree.PreservingEncapsulation.csproj", "{41502AC6-6362-42A5-B2CD-3A4EA3576A6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -177,6 +179,10 @@ Global
 		{497D70B6-5477-499B-BDAF-198B623A2536}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{497D70B6-5477-499B-BDAF-198B623A2536}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{497D70B6-5477-499B-BDAF-198B623A2536}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41502AC6-6362-42A5-B2CD-3A4EA3576A6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41502AC6-6362-42A5-B2CD-3A4EA3576A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41502AC6-6362-42A5-B2CD-3A4EA3576A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41502AC6-6362-42A5-B2CD-3A4EA3576A6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -210,6 +216,7 @@ Global
 		{068CE79A-28DD-428C-8B2C-58C681DA1CE5} = {7EF55878-1ECF-4AB6-A8E2-229D5F15FCCC}
 		{4D103A8E-EE72-4411-871B-A1658984E1B2} = {5470B66E-F115-4BED-A933-C1F42C26AB45}
 		{497D70B6-5477-499B-BDAF-198B623A2536} = {5470B66E-F115-4BED-A933-C1F42C26AB45}
+		{41502AC6-6362-42A5-B2CD-3A4EA3576A6C} = {9FCB19D7-4DAC-4B92-A9BC-B8FDFE28A110}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1880E68-29D6-48A6-9595-E961759756D1}
