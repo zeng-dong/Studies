@@ -60,5 +60,6 @@
   <ItemGroup>
     <None Include="Northwind-objects-and-data.sql" />
     <None Include="northwind-creation.sql" />
+    <None Include="DddEfCore_creation.sql" />
   </ItemGroup>
 </Project>
