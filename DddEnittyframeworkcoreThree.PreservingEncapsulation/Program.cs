@@ -1,8 +1,6 @@
 ﻿using DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data;
 using DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using System.IO;
 
 namespace DddEnittyframeworkcoreThree.PreservingEncapsulation
@@ -12,29 +10,12 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation
         public static void Main()
         {
             string connectionString = GetConnectionString();
-            ILoggerFactory loggerFactory = CreateLoggerFactory();
+            bool useConsoleLogger = true;  // IHostingEnvironment.IsDevelopment()
 
-            var optionsBuilder = new DbContextOptionsBuilder<SchoolContext>();
-            optionsBuilder
-                .UseSqlServer(connectionString)
-                .UseLoggerFactory(loggerFactory)
-                .EnableSensitiveDataLogging();
-
-            using (var context = new SchoolContext(optionsBuilder.Options))
+            using (var context = new SchoolContext(connectionString, useConsoleLogger))
             {
                 Student student = context.Students.Find(1L);
             }
-        }
-
-        private static ILoggerFactory CreateLoggerFactory()
-        {
-            return LoggerFactory.Create(builder =>
-            {
-                builder
-                    .AddFilter((category, level) =>
-                        category == DbLoggerCategory.Database.Command.Name && level == LogLevel.Information)
-                    .AddConsole();
-            });
         }
 
         private static string GetConnectionString()

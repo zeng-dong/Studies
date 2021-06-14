@@ -1,32 +1,44 @@
 ﻿using DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
 {
     public sealed class SchoolContext : DbContext
     {
+        private readonly string _connectionString;
+        private readonly bool _useConsoleLogger;
+
         public DbSet<Student> Students { get; set; }
         public DbSet<Course> Courses { get; set; }
 
-        #region for creating migrations
-        //public SchoolContext()
-        //    : base()
-        //{
-        //}
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer(
-        //        "Data Source= DESKTOP-QB0EFH1; Initial Catalog=EFCoreDDD")
-        //        ;
-        //}
-        #endregion
-
-        public SchoolContext(DbContextOptions<SchoolContext> options)
-            : base(options)
+        public SchoolContext(string connectionString, bool useConsoleLogger)
         {
+            _connectionString = connectionString;
+            _useConsoleLogger = useConsoleLogger;
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
+            {
+                builder
+                    .AddFilter((category, level) =>
+                        category == DbLoggerCategory.Database.Command.Name && level == LogLevel.Information)
+                    .AddConsole();
+            });
 
+            optionsBuilder
+                .UseSqlServer(_connectionString);
+
+            if (_useConsoleLogger)
+            {
+                optionsBuilder.UseLoggerFactory(loggerFactory)
+                .EnableSensitiveDataLogging();
+            }
+
+
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
