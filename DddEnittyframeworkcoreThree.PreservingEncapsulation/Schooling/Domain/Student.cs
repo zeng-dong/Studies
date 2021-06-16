@@ -1,7 +1,11 @@
-﻿namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain
+﻿using Microsoft.EntityFrameworkCore.Infrastructure;
+
+namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain
 {
-    public class Student
+    public class Student      //  class cannot be sealed if lazy loading
     {
+        private ILazyLoader _lazyLoader;
+
         public long Id { get; private set; }
         public string Name { get; private set; }
         public string Email { get; private set; }
@@ -9,6 +13,12 @@
 
         // virtual here to enable lazy loading
         public virtual Course FavoriteCourse { get; private set; }
+
+        //public Course FavoriteCourse
+        //{
+        //    get => _lazyLoader.Load(this, ref, _favoriteCourse);
+        //}
+
 
         //public Student(string name, string email, long favoriteCouseId)
         //{
@@ -34,6 +44,14 @@
         {
 
         }
+
+        // there is another way to do lazy loading: inject a ILazyLoader in ctor and use it, this is a terrible idea
+        private Student(ILazyLoader lazyLoader)
+        {
+            _lazyLoader = lazyLoader;
+        }
+
+
     }
 
     // public setters: not easy to maintain invariant
