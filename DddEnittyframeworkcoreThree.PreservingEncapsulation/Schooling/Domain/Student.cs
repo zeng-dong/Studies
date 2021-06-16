@@ -6,7 +6,9 @@
         public string Name { get; private set; }
         public string Email { get; private set; }
         //public long FavoriteCourseId { get; private set; }
-        public Course FavoriteCourse { get; private set; }
+
+        // virtual here to enable lazy loading
+        public virtual Course FavoriteCourse { get; private set; }
 
         //public Student(string name, string email, long favoriteCouseId)
         //{
@@ -23,8 +25,12 @@
             FavoriteCourse = favoriteCouse;
         }
 
+
         // so this is a violation of separation of concern, this ctor is persistence/orm concern
-        private Student()    // but efc 3.x not smart enough to supply non-primative type parameters, so when we use Course in ctor, we need the parameter-less ctor
+
+        // efc lazy loading requires non-private parameter-less ctor so we change it to protected
+
+        protected Student()    // but efc 3.x not smart enough to supply non-primative type parameters, so when we use Course in ctor, we need the parameter-less ctor
         {
 
         }

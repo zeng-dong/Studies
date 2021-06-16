@@ -29,7 +29,10 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
             });
 
             optionsBuilder
-                .UseSqlServer(_connectionString);
+                .UseSqlServer(_connectionString)
+                .UseLazyLoadingProxies()
+                ;
+
 
             if (_useConsoleLogger)
             {
