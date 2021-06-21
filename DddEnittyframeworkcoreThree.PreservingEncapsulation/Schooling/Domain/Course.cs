@@ -1,9 +1,10 @@
-﻿namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain
+﻿using DddEnittyframeworkcoreThree.PreservingEncapsulation.Core;
+
+namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain
 {
-    public class Course
+    public class Course : Entity
     {
-        public long Id { get; set; }
-        public string Name { get; set; }
+        public string Name { get; }
         //public string Credits { get; set; }
     }
 }

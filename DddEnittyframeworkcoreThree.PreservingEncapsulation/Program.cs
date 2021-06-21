@@ -2,7 +2,6 @@
 using DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain;
 using Microsoft.Extensions.Configuration;
 using System.IO;
-using System.Linq;
 
 namespace DddEnittyframeworkcoreThree.PreservingEncapsulation
 {
@@ -15,11 +14,11 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation
 
             using (var context = new SchoolContext(connectionString, useConsoleLogger))
             {
-                //Student student = context.Students.Find(1L);
+                Student student = context.Students.Find(1L);
 
-                Student student = context.Students
-                    //.Include(x => x.FavoriteCourse)
-                    .SingleOrDefault(x => x.Id == 1);
+                //Student student = context.Students
+                //    //.Include(x => x.FavoriteCourse)
+                //    .SingleOrDefault(x => x.Id == 1);
             }
         }
 
