@@ -31,7 +31,9 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api
             Course course = Course.FromId(courseId);
             if (course == null) return "Course not found";
 
-            student.Enrollments.Add(new Enrollment(course, student, grade));
+
+            //student.Enrollments.Add(new Enrollment(course, student, grade));  ===>
+            student.EnrollIn(course, grade);
             _context.SaveChanges();
 
             return "OK";

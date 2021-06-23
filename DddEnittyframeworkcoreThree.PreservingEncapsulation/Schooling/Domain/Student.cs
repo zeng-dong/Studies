@@ -1,6 +1,7 @@
 ﻿using DddEnittyframeworkcoreThree.PreservingEncapsulation.Core;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain
 {
@@ -16,8 +17,17 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain
         public virtual Course FavoriteCourse { get; private set; }
 
         // traditional way to o2m
-        public virtual ICollection<Enrollment> Enrollments { get; set; }
+        //public virtual ICollection<Enrollment> Enrollments { get; set; }
 
+        // using backing field to encapsulate, once hidden, introduce a public method
+        private readonly List<Enrollment> _enrollments = new List<Enrollment>();
+        public virtual IReadOnlyList<Enrollment> Enrollments => _enrollments.ToList();
+
+        public void EnrollIn(Course course, Grade grade)
+        {
+            var enrollment = new Enrollment(course, this, grade);
+            _enrollments.Add(enrollment);
+        }
 
         //public Course FavoriteCourse
         //{
