@@ -1,6 +1,7 @@
-﻿using DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data;
-using DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain;
+﻿using DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api;
+using DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data;
 using Microsoft.Extensions.Configuration;
+using System;
 using System.IO;
 
 namespace DddEnittyframeworkcoreThree.PreservingEncapsulation
@@ -9,18 +10,21 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation
     {
         public static void Main()
         {
+            string result = Execute(x => x.CheckStudentFavoriteCourse(1, 2));
+            Console.WriteLine(result);
+        }
+
+        private static string Execute(Func<StudentController, string> func)
+        {
             string connectionString = GetConnectionString();
-            bool useConsoleLogger = true;  // IHostingEnvironment.IsDevelopment()
 
-            using (var context = new SchoolContext(connectionString, useConsoleLogger))
+            using (var context = new SchoolContext(connectionString, true))
             {
-                Student student = context.Students.Find(1L);
-
-                //Student student = context.Students
-                //    //.Include(x => x.FavoriteCourse)
-                //    .SingleOrDefault(x => x.Id == 1);
+                var controller = new StudentController(context);
+                return func(controller);
             }
         }
+
 
         private static string GetConnectionString()
         {
