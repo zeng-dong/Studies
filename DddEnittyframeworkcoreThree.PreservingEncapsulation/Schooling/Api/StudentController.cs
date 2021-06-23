@@ -3,7 +3,7 @@ using DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain;
 
 namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api
 {
-    public class StudentController
+    public sealed class StudentController
     {
         private readonly SchoolContext _context;
 
@@ -23,5 +23,18 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api
             return student.FavoriteCourse == course ? "Yes" : "No";
         }
 
+        public string AddEnrollment(long studentId, long courseId, Grade grade)
+        {
+            Student student = _context.Students.Find(studentId);
+            if (student == null) return "Student not found";
+
+            Course course = Course.FromId(courseId);
+            if (course == null) return "Course not found";
+
+            student.Enrollments.Add(new Enrollment(course, student, grade));
+            _context.SaveChanges();
+
+            return "OK";
+        }
     }
 }

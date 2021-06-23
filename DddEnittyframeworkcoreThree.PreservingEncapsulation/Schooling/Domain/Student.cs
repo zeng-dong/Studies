@@ -1,5 +1,6 @@
 ﻿using DddEnittyframeworkcoreThree.PreservingEncapsulation.Core;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using System.Collections.Generic;
 
 namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain
 {
@@ -13,6 +14,10 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain
 
         // virtual here to enable lazy loading
         public virtual Course FavoriteCourse { get; private set; }
+
+        // traditional way to o2m
+        public virtual ICollection<Enrollment> Enrollments { get; set; }
+
 
         //public Course FavoriteCourse
         //{

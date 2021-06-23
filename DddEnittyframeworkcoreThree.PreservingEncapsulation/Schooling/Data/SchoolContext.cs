@@ -55,12 +55,22 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
                 //x.Property(p => p.FavoriteCourseId);         
                 x.HasOne(p => p.FavoriteCourse).WithMany();  // setup m2o with navigation property, not fk
 
+                x.HasMany(p => p.Enrollments).WithOne(p => p.Student);
+
             });
             modelBuilder.Entity<Course>(x =>
             {
                 x.ToTable("Course").HasKey(k => k.Id);
                 x.Property(p => p.Id).HasColumnName("CourseID");
                 x.Property(p => p.Name);
+            });
+            modelBuilder.Entity<Enrollment>(x =>
+            {
+                x.ToTable("Enrollment").HasKey(k => k.Id);
+                x.Property(p => p.Id).HasColumnName("EnrollmentID");
+                x.HasOne(p => p.Student).WithMany(p => p.Enrollments);
+                x.HasOne(p => p.Course).WithMany();
+                x.Property(p => p.Grade);
             });
         }
     }
