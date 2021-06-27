@@ -33,10 +33,10 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api
 
 
             //student.Enrollments.Add(new Enrollment(course, student, grade));  ===>
-            student.EnrollIn(course, grade);
+            string result = student.EnrollIn(course, grade);
             _context.SaveChanges();
 
-            return "OK";
+            return result;
         }
     }
 }
