@@ -23,6 +23,12 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain
         private readonly List<Enrollment> _enrollments = new List<Enrollment>();
         public virtual IReadOnlyList<Enrollment> Enrollments => _enrollments.ToList();
 
+
+        // private readonly ICollection<Enrollment> _enrollments
+        // public virtual IEnumerable<Enrollment> Enrollments
+
+
+
         public string EnrollIn(Course course, Grade grade)
         {
             if (_enrollments.Any(x => x.Course == course))
