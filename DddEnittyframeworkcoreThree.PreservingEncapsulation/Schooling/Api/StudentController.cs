@@ -42,5 +42,21 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api
 
             return result;
         }
+
+        public string DisenrollStudent(long studentId, long courseId)
+        {
+            Student student = _studentRepository.GetById(studentId);
+
+            if (student == null) return "Student not found";
+
+            Course course = Course.FromId(courseId);
+            if (course == null) return "Course not found";
+
+            student.Disenroll(course);
+
+            _context.SaveChanges();
+
+            return "OK";
+        }
     }
 }

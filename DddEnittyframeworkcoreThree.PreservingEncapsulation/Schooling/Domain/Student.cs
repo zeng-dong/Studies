@@ -34,6 +34,16 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain
             return "OK";
         }
 
+        public void Disenroll(Course course)
+        {
+            Enrollment enrollment = _enrollments.FirstOrDefault(x => x.Course == course);
+
+            if (enrollment == null)
+                return;
+
+            _enrollments.Remove(enrollment);
+        }
+
         //public Course FavoriteCourse
         //{
         //    get => _lazyLoader.Load(this, ref, _favoriteCourse);

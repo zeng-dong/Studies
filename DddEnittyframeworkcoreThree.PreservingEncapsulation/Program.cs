@@ -10,9 +10,13 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation
     {
         public static void Main()
         {
-            string result = Execute(x => x.CheckStudentFavoriteCourse(1, 2));
+            string result = string.Empty;
 
-            //string result = Execute(x => x.AddEnrollment(1, 2, Grade.A));
+            //result = Execute(x => x.CheckStudentFavoriteCourse(1, 2));
+
+            //result = Execute(x => x.AddEnrollment(1, 2, Grade.A));
+
+            result = Execute(x => x.DisenrollStudent(1, 2));
 
             Console.WriteLine(result);
         }
