@@ -2,7 +2,7 @@
 
 namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
 {
-    public class StudentRepository
+    public sealed class StudentRepository
     {
         private readonly SchoolContext _context;
 
@@ -19,6 +19,11 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
             _context.Entry(student).Collection(x => x.Enrollments).Load();
 
             return student;
+        }
+
+        public void Save(Student student)
+        {
+            _context.Students.Attach(student);
         }
     }
 }

@@ -69,11 +69,17 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api
 
             var student = new Student(name, email, favoriteCourse, favoriteCourseGrade);
 
-            _context.Attach(student);       // or _context.Update(student);  but .......
-                                            //  always prefer Attach over Update or Add
+            //_context.Attach(student);       // or _context.Update(student);  but .......
+            //                                //  always prefer Attach over Update or Add
+
+            _studentRepository.Save(student);
+
             _context.SaveChanges();
 
             return "OK";
         }
+
+
+
     }
 }
