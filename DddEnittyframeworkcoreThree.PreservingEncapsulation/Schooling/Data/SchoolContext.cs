@@ -1,5 +1,6 @@
 ﻿using DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Logging;
 
 namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
@@ -80,6 +81,16 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
                 x.HasOne(p => p.Course).WithMany();
                 x.Property(p => p.Grade);
             });
+        }
+
+        public override int SaveChanges()
+        {
+            foreach (EntityEntry<Course> course in ChangeTracker.Entries<Course>())
+            {
+                course.State = EntityState.Unchanged;
+            }
+
+            return base.SaveChanges();
         }
     }
 }
