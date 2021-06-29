@@ -58,5 +58,22 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api
 
             return "OK";
         }
+
+        public string RegisterStudent(
+            string name, string email,
+            long favoriteCourseId, Grade favoriteCourseGrade)
+        {
+            Course favoriteCourse = Course.FromId(favoriteCourseId);
+            if (favoriteCourse == null)
+                return "Course not found";
+
+            var student = new Student(name, email, favoriteCourse, favoriteCourseGrade);
+
+            _context.Attach(student);       // or _context.Update(student);  but .......
+                                            //  always prefer Attach over Update or Add
+            _context.SaveChanges();
+
+            return "OK";
+        }
     }
 }

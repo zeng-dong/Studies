@@ -64,11 +64,13 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain
         //}
 
 
-        public Student(string name, string email, Course favoriteCouse) : this()
+        public Student(string name, string email, Course favoriteCouse, Grade favoriteCourseGrade) : this()
         {
             Name = name;
             Email = email;
             FavoriteCourse = favoriteCouse;
+
+            EnrollIn(favoriteCouse, favoriteCourseGrade);
         }
 
 
