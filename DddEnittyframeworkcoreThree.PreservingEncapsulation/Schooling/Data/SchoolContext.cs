@@ -67,7 +67,10 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
             {
                 x.ToTable("Course").HasKey(k => k.Id);
                 x.Property(p => p.Id).HasColumnName("CourseID");
-                x.Property(p => p.Name);
+                x.Property(p => p.Name)
+                    .Metadata.SetAfterSaveBehavior(Microsoft.EntityFrameworkCore.Metadata.PropertySaveBehavior.Ignore);
+
+                ;
             });
             modelBuilder.Entity<Enrollment>(x =>
             {
