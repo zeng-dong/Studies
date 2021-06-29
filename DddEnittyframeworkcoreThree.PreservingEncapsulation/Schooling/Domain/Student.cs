@@ -9,12 +9,12 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain
     {
         private ILazyLoader _lazyLoader;
 
-        public string Name { get; private set; }
-        public string Email { get; private set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
         //public long FavoriteCourseId { get; private set; }
 
         // virtual here to enable lazy loading
-        public virtual Course FavoriteCourse { get; private set; }
+        public virtual Course FavoriteCourse { get; set; }
 
         // traditional way to o2m
         //public virtual ICollection<Enrollment> Enrollments { get; set; }
