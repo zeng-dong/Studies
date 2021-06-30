@@ -10,11 +10,9 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Core
 
         public override bool Equals(object obj)
         {
-            if (obj == null)
-                return false;
+            if (obj == null) return false;
 
-            if (GetType() != obj.GetType())
-                return false;
+            if (GetType() != obj.GetType()) return false;
 
             var valueObject = (ValueObject)obj;
 
@@ -35,11 +33,9 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Core
 
         public static bool operator ==(ValueObject a, ValueObject b)
         {
-            if (ReferenceEquals(a, null) && ReferenceEquals(b, null))
-                return true;
+            if (ReferenceEquals(a, null) && ReferenceEquals(b, null)) return true;
 
-            if (ReferenceEquals(a, null) || ReferenceEquals(b, null))
-                return false;
+            if (ReferenceEquals(a, null) || ReferenceEquals(b, null)) return false;
 
             return a.Equals(b);
         }
