@@ -52,7 +52,16 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
                 x.Property(p => p.Id).HasColumnName("StudentID");
                 x.Property(p => p.Email)
                     .HasConversion(p => p.Value, p => Email.Create(p).Value);
-                x.Property(p => p.Name);
+
+
+                // x.Property(p => p.Name)  // replaced with OwnsONe                    
+                ;
+
+                x.OwnsOne(p => p.Name, p =>
+                {
+                    p.Property(pp => pp.First).HasColumnName("FirstName");
+                    p.Property(pp => pp.Last).HasColumnName("LastName");
+                });
 
                 //x.Property(p => p.FavoriteCourseId);         
                 x.HasOne(p => p.FavoriteCourse).WithMany();  // setup m2o with navigation property, not fk
