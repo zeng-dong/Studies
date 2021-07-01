@@ -10,7 +10,7 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain
         private ILazyLoader _lazyLoader;
 
         public string Name { get; set; }
-        public string Email { get; set; }
+        public Email Email { get; set; }
         //public long FavoriteCourseId { get; private set; }
 
         // virtual here to enable lazy loading
@@ -64,7 +64,7 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain
         //}
 
 
-        public Student(string name, string email, Course favoriteCouse, Grade favoriteCourseGrade) : this()
+        public Student(string name, Email email, Course favoriteCouse, Grade favoriteCourseGrade) : this()
         {
             Name = name;
             Email = email;

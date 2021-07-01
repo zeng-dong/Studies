@@ -1,4 +1,5 @@
-﻿using DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data;
+﻿using CSharpFunctionalExtensions;
+using DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data;
 using DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain;
 
 namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api
@@ -67,7 +68,10 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api
             if (favoriteCourse == null)
                 return "Course not found";
 
-            var student = new Student(name, email, favoriteCourse, favoriteCourseGrade);
+            Result<Email> result = Email.Create(email);
+            if (result.IsFailure) return result.Error;
+
+            var student = new Student(name, result.Value, favoriteCourse, favoriteCourseGrade);
 
             //_context.Attach(student);       // or _context.Update(student);  but .......
             //                                //  always prefer Attach over Update or Add
@@ -87,8 +91,11 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api
             Course favoriteCourse = Course.FromId(favoriteCourseId);
             if (favoriteCourse == null) return "Course not found";
 
+            Result<Email> result = Email.Create(email);
+            if (result.IsFailure) return result.Error;
+
             student.Name = name;
-            student.Email = email;
+            student.Email = result.Value;
             student.FavoriteCourse = favoriteCourse;
 
             _context.SaveChanges();

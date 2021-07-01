@@ -50,7 +50,8 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
             {
                 x.ToTable("Student").HasKey(k => k.Id);
                 x.Property(p => p.Id).HasColumnName("StudentID");
-                x.Property(p => p.Email);
+                x.Property(p => p.Email)
+                    .HasConversion(p => p.Value, p => Email.Create(p).Value);
                 x.Property(p => p.Name);
 
                 //x.Property(p => p.FavoriteCourseId);         
