@@ -18,7 +18,7 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation
 
             //result = Execute(x => x.DisenrollStudent(1, 2));
 
-            result = Execute(x => x.EditPersonalInfo(2, "Carl", "carl@yahoo.com", 1));
+            result = Execute(x => x.EditPersonalInfo(2, "Carl 2", "Carlson 2", "carl@yahoo.com", 1));
 
             Console.WriteLine(result);
         }

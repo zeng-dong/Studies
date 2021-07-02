@@ -61,17 +61,20 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api
         }
 
         public string RegisterStudent(
-            string name, string email,
+            string firstName, string lastName, string email,
             long favoriteCourseId, Grade favoriteCourseGrade)
         {
             Course favoriteCourse = Course.FromId(favoriteCourseId);
             if (favoriteCourse == null)
                 return "Course not found";
 
-            Result<Email> result = Email.Create(email);
-            if (result.IsFailure) return result.Error;
+            Result<Email> emailResult = Email.Create(email);
+            if (emailResult.IsFailure) return emailResult.Error;
 
-            var student = new Student(name, result.Value, favoriteCourse, favoriteCourseGrade);
+            Result<Name> nameResult = Name.Create(firstName, lastName);
+            if (nameResult.IsFailure) return nameResult.Error;
+
+            var student = new Student(nameResult.Value, emailResult.Value, favoriteCourse, favoriteCourseGrade);
 
             //_context.Attach(student);       // or _context.Update(student);  but .......
             //                                //  always prefer Attach over Update or Add
@@ -83,7 +86,7 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api
             return "OK";
         }
 
-        public string EditPersonalInfo(long studentId, string name, string email, long favoriteCourseId)
+        public string EditPersonalInfo(long studentId, string firstName, string lastName, string email, long favoriteCourseId)
         {
             Student student = _studentRepository.GetById(studentId);
             if (student == null) return "Student not found";
@@ -94,7 +97,10 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api
             Result<Email> result = Email.Create(email);
             if (result.IsFailure) return result.Error;
 
-            student.Name = name;
+            Result<Name> nameResult = Name.Create(firstName, lastName);
+            if (nameResult.IsFailure) return nameResult.Error;
+
+            student.Name = nameResult.Value;
             student.Email = result.Value;
             student.FavoriteCourse = favoriteCourse;
 
