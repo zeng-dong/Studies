@@ -1,5 +1,6 @@
 ﻿using DddEnittyframeworkcoreThree.PreservingEncapsulation.Core;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,12 +10,12 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain
     {
         private ILazyLoader _lazyLoader;
 
-        public virtual Name Name { get; set; }
-        public Email Email { get; set; }
+        public virtual Name Name { get; private set; }
+        public Email Email { get; private set; }
         //public long FavoriteCourseId { get; private set; }
 
         // virtual here to enable lazy loading
-        public virtual Course FavoriteCourse { get; set; }
+        public virtual Course FavoriteCourse { get; private set; }
 
         // traditional way to o2m
         //public virtual ICollection<Enrollment> Enrollments { get; set; }
@@ -88,6 +89,20 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain
         //{
         //    _lazyLoader = lazyLoader;
         //}
+
+        public void EditPersonalInfo(Name name, Email email, Course favoriteCourse)
+        {
+            if (name == null)
+                throw new ArgumentNullException();
+            if (email == null)
+                throw new ArgumentNullException();
+            if (favoriteCourse == null)
+                throw new ArgumentNullException();
+
+            Name = name;
+            Email = email;
+            FavoriteCourse = favoriteCourse;
+        }
 
 
     }

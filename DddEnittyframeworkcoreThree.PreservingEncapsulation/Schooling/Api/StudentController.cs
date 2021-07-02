@@ -94,15 +94,13 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api
             Course favoriteCourse = Course.FromId(favoriteCourseId);
             if (favoriteCourse == null) return "Course not found";
 
-            Result<Email> result = Email.Create(email);
-            if (result.IsFailure) return result.Error;
+            Result<Email> emailResult = Email.Create(email);
+            if (emailResult.IsFailure) return emailResult.Error;
 
             Result<Name> nameResult = Name.Create(firstName, lastName);
             if (nameResult.IsFailure) return nameResult.Error;
 
-            student.Name = nameResult.Value;
-            student.Email = result.Value;
-            student.FavoriteCourse = favoriteCourse;
+            student.EditPersonalInfo(nameResult.Value, emailResult.Value, favoriteCourse);
 
             _context.SaveChanges();
 
