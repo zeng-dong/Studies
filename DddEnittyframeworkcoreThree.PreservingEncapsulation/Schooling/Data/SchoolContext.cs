@@ -2,11 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
 {
     public sealed class SchoolContext : DbContext
     {
+
+        private static readonly Type[] EnumerationTypes = { typeof(Course), typeof(Suffix) };
+
         private readonly string _connectionString;
         private readonly bool _useConsoleLogger;
 
@@ -59,8 +65,15 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
 
                 x.OwnsOne(p => p.Name, p =>
                 {
+
                     p.Property(pp => pp.First).HasColumnName("FirstName");
                     p.Property(pp => pp.Last).HasColumnName("LastName");
+
+                    p.Property<long?>("NameSuffixID").HasColumnName("NameSuffixID");
+                    p.HasOne(pp => pp.Suffix).WithMany()    // HasColumnName() would not work here, instead see line above and then combine next line
+                        .HasForeignKey("NameSuffixID").IsRequired(false)
+                    ;
+
                 });
 
                 //x.Property(p => p.FavoriteCourseId);         
@@ -88,7 +101,7 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
                 x.ToTable("Course").HasKey(k => k.Id);
                 x.Property(p => p.Id).HasColumnName("CourseID");
                 x.Property(p => p.Name)
-                    .Metadata.SetAfterSaveBehavior(Microsoft.EntityFrameworkCore.Metadata.PropertySaveBehavior.Ignore)
+                //        .Metadata.SetAfterSaveBehavior(Microsoft.EntityFrameworkCore.Metadata.PropertySaveBehavior.Ignore)                  // override SaveChanges instead
                 ;
             });
             modelBuilder.Entity<Enrollment>(x =>
@@ -103,9 +116,22 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
 
         public override int SaveChanges()
         {
-            foreach (EntityEntry<Course> course in ChangeTracker.Entries<Course>())
+            //foreach (EntityEntry<Course> course in ChangeTracker.Entries<Course>())
+            //{
+            //    course.State = EntityState.Unchanged;
+            //}
+            //
+            //foreach (EntityEntry<Suffix> suffix in ChangeTracker.Entries<Suffix>())
+            //{
+            //    suffix.State = EntityState.Unchanged;
+            //}
+
+            IEnumerable<EntityEntry> enumerationEntries = ChangeTracker.Entries()
+                .Where(x => EnumerationTypes.Contains(x.Entity.GetType()));
+
+            foreach (EntityEntry enumerationEntry in enumerationEntries)
             {
-                course.State = EntityState.Unchanged;
+                enumerationEntry.State = EntityState.Unchanged;
             }
 
             return base.SaveChanges();
