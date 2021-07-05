@@ -10,9 +10,6 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
 {
     public sealed class SchoolContext : DbContext
     {
-
-        private static readonly Type[] EnumerationTypes = { typeof(Course), typeof(Suffix) };
-
         private readonly string _connectionString;
         private readonly bool _useConsoleLogger;
 
@@ -113,6 +110,10 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
                 x.Property(p => p.Grade);
             });
         }
+
+
+        private static readonly Type[] EnumerationTypes = { typeof(Course), typeof(Suffix) };
+
 
         public override int SaveChanges()
         {
