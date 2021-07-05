@@ -61,17 +61,20 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api
         }
 
         public string RegisterStudent(
-            string firstName, string lastName, string email,
+            string firstName, string lastName, long nameSuffixId, string email,
             long favoriteCourseId, Grade favoriteCourseGrade)
         {
             Course favoriteCourse = Course.FromId(favoriteCourseId);
             if (favoriteCourse == null)
                 return "Course not found";
 
+            Suffix suffix = Suffix.FromId(nameSuffixId);
+            if (suffix == null) return "Suffix not found";
+
             Result<Email> emailResult = Email.Create(email);
             if (emailResult.IsFailure) return emailResult.Error;
 
-            Result<Name> nameResult = Name.Create(firstName, lastName);
+            Result<Name> nameResult = Name.Create(firstName, lastName, suffix);
             if (nameResult.IsFailure) return nameResult.Error;
 
             var student = new Student(nameResult.Value, emailResult.Value, favoriteCourse, favoriteCourseGrade);
@@ -86,10 +89,13 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api
             return "OK";
         }
 
-        public string EditPersonalInfo(long studentId, string firstName, string lastName, string email, long favoriteCourseId)
+        public string EditPersonalInfo(long studentId, string firstName, string lastName, long nameSuffixId, string email, long favoriteCourseId)
         {
             Student student = _studentRepository.GetById(studentId);
             if (student == null) return "Student not found";
+
+            Suffix suffix = Suffix.FromId(nameSuffixId);
+            if (suffix == null) return "Suffix not found";
 
             Course favoriteCourse = Course.FromId(favoriteCourseId);
             if (favoriteCourse == null) return "Course not found";
@@ -97,7 +103,7 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Api
             Result<Email> emailResult = Email.Create(email);
             if (emailResult.IsFailure) return emailResult.Error;
 
-            Result<Name> nameResult = Name.Create(firstName, lastName);
+            Result<Name> nameResult = Name.Create(firstName, lastName, suffix);
             if (nameResult.IsFailure) return nameResult.Error;
 
             student.EditPersonalInfo(nameResult.Value, emailResult.Value, favoriteCourse);

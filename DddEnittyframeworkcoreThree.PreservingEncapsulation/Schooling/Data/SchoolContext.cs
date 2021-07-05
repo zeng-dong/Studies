@@ -74,13 +74,21 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
                 ;
 
             });
+
+            modelBuilder.Entity<Suffix>(x =>
+            {
+                x.ToTable("Suffix").HasKey(k => k.Id);
+                x.Property(p => p.Id).HasColumnName("SuffixID");
+                x.Property(p => p.Name)
+                ;
+            });
+
             modelBuilder.Entity<Course>(x =>
             {
                 x.ToTable("Course").HasKey(k => k.Id);
                 x.Property(p => p.Id).HasColumnName("CourseID");
                 x.Property(p => p.Name)
-                    .Metadata.SetAfterSaveBehavior(Microsoft.EntityFrameworkCore.Metadata.PropertySaveBehavior.Ignore);
-
+                    .Metadata.SetAfterSaveBehavior(Microsoft.EntityFrameworkCore.Metadata.PropertySaveBehavior.Ignore)
                 ;
             });
             modelBuilder.Entity<Enrollment>(x =>
