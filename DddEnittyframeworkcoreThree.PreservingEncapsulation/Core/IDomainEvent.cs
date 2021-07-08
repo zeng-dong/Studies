@@ -1,4 +1,5 @@
 ﻿using DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain;
+using System;
 
 namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Core
 {
@@ -6,7 +7,7 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Core
     {
     }
 
-    public class StudentEmailChangedEvent : IDomainEvent
+    public sealed class StudentEmailChangedEvent : IDomainEvent
     {
         public long StudentId { get; }
         public Email NewEmail { get; }
@@ -15,6 +16,19 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Core
         {
             StudentId = studentId;
             NewEmail = newEmail;
+        }
+    }
+
+    public interface IBus
+    {
+        void Send(string message);
+    }
+
+    public class Bus : IBus
+    {
+        public void Send(string message)
+        {
+            Console.WriteLine($"Message sent: '{message}'");
         }
     }
 }
