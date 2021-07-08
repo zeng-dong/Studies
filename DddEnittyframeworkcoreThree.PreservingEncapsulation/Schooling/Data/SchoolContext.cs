@@ -1,4 +1,5 @@
-﻿using DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain;
+﻿using DddEnittyframeworkcoreThree.PreservingEncapsulation.Core;
+using DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Logging;
@@ -135,7 +136,21 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Schooling.Data
                 enumerationEntry.State = EntityState.Unchanged;
             }
 
-            return base.SaveChanges();
+            List<Entity> entities = ChangeTracker.Entries()
+                .Where(x => x.Entity is Entity)
+                .Select(x => (Entity)x.Entity)
+                .ToList();
+
+            int result = base.SaveChanges();
+
+            foreach (Entity entity in entities)
+            {
+                // dispatch events
+
+                // clear all events
+            }
+
+            return result;
         }
     }
 }
