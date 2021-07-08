@@ -28,7 +28,9 @@ namespace DddEnittyframeworkcoreThree.PreservingEncapsulation.Core
     {
         public void Send(string message)
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"Message sent: '{message}'");
+            Console.ResetColor();
         }
     }
 }
