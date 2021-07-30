@@ -38,6 +38,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DDD", "DDD", "{9FCB19D7-4DAC-4B92-A9BC-B8FDFE28A110}"
 	ProjectSection(SolutionItems) = preProject
 		Domain Events vs Integration Events.txt = Domain Events vs Integration Events.txt
+		what efc can do to support ddd.md = what efc can do to support ddd.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventStoreConsoleApp", "EventStoreConsoleApp\EventStoreConsoleApp.csproj", "{5B8AFF38-E31C-4AA4-9058-21C654267257}"
@@ -81,11 +82,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cachings.Aspnetcore.DotnetF
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SqlServer", "SqlServer\SqlServer.sqlproj", "{068CE79A-28DD-428C-8B2C-58C681DA1CE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accounting", "Accounting\Accounting.csproj", "{4D103A8E-EE72-4411-871B-A1658984E1B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accounting", "Accounting\Accounting.csproj", "{4D103A8E-EE72-4411-871B-A1658984E1B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapping", "Mapping\Mapping.csproj", "{497D70B6-5477-499B-BDAF-198B623A2536}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mapping", "Mapping\Mapping.csproj", "{497D70B6-5477-499B-BDAF-198B623A2536}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DddEnittyframeworkcoreThree.PreservingEncapsulation", "DddEnittyframeworkcoreThree.PreservingEncapsulation\DddEnittyframeworkcoreThree.PreservingEncapsulation.csproj", "{41502AC6-6362-42A5-B2CD-3A4EA3576A6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEnittyframeworkcoreThree.PreservingEncapsulation", "DddEnittyframeworkcoreThree.PreservingEncapsulation\DddEnittyframeworkcoreThree.PreservingEncapsulation.csproj", "{41502AC6-6362-42A5-B2CD-3A4EA3576A6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
