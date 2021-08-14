@@ -44,6 +44,8 @@ namespace CarvedRockSportsShop.Api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CarvedRockSportsShop.Api v1"));
             }
 
+            app.UseCustomRequestLogging();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();

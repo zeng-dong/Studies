@@ -1,7 +1,7 @@
 ﻿using CarvedRock.Api.ApiModels;
 using CarvedRock.Api.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using Serilog;
 using System.Collections.Generic;
 
 namespace CarvedRock.Api.Controllers
@@ -11,18 +11,23 @@ namespace CarvedRock.Api.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IProductLogic _productLogic;
-        private readonly ILogger<ProductsController> _logger;
+        //private readonly ILogger<ProductsController> _logger;
 
-        public ProductsController(ILogger<ProductsController> logger, IProductLogic productLogic)
+        public ProductsController(//ILogger<ProductsController> logger,
+                                  IProductLogic productLogic)
         {
             _productLogic = productLogic;
-            _logger = logger;
+            //_logger = logger;
         }
 
         [HttpGet]
         public IEnumerable<Product> GetProducts(string category = "all")
         {
-            _logger.LogInformation("Starting controller action GetProducts for {category}", category);
+            //_logger.LogInformation("Starting controller action GetProducts for {category}", category);
+
+            //Log.Information("Starting controller action GetProducts for {category}", category);
+            Log.ForContext("Category", category)
+               .Information("Starting controller action GetProducts");
 
             return _productLogic.GetProductsForCategory(category);
         }
