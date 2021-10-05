@@ -88,6 +88,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mapping", "Mapping\Mapping.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEnittyframeworkcoreThree.PreservingEncapsulation", "DddEnittyframeworkcoreThree.PreservingEncapsulation\DddEnittyframeworkcoreThree.PreservingEncapsulation.csproj", "{41502AC6-6362-42A5-B2CD-3A4EA3576A6C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Json", "Json", "{A32C0B1B-D087-435C-B6D9-2072A80735C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AboutJtoken", "AboutJtoken\AboutJtoken.csproj", "{F0B53852-FCB2-4FB5-8315-0D2D04794121}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -184,6 +188,10 @@ Global
 		{41502AC6-6362-42A5-B2CD-3A4EA3576A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41502AC6-6362-42A5-B2CD-3A4EA3576A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41502AC6-6362-42A5-B2CD-3A4EA3576A6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0B53852-FCB2-4FB5-8315-0D2D04794121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0B53852-FCB2-4FB5-8315-0D2D04794121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0B53852-FCB2-4FB5-8315-0D2D04794121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0B53852-FCB2-4FB5-8315-0D2D04794121}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -218,6 +226,8 @@ Global
 		{4D103A8E-EE72-4411-871B-A1658984E1B2} = {5470B66E-F115-4BED-A933-C1F42C26AB45}
 		{497D70B6-5477-499B-BDAF-198B623A2536} = {5470B66E-F115-4BED-A933-C1F42C26AB45}
 		{41502AC6-6362-42A5-B2CD-3A4EA3576A6C} = {9FCB19D7-4DAC-4B92-A9BC-B8FDFE28A110}
+		{A32C0B1B-D087-435C-B6D9-2072A80735C3} = {7EF55878-1ECF-4AB6-A8E2-229D5F15FCCC}
+		{F0B53852-FCB2-4FB5-8315-0D2D04794121} = {A32C0B1B-D087-435C-B6D9-2072A80735C3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1880E68-29D6-48A6-9595-E961759756D1}
