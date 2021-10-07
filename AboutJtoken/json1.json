@@ -1,0 +1,98 @@
+{
+  "Main": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "watchlistid": {
+          "type": "string",
+          "maxLength": 20,
+          "description": "Identification of the watch list. A watch list is a set of securities which is used for simulation in the Benchmark and Portfolio Analysis"
+        },
+        "owner": {
+          "type": "string",
+          "readOnly": true
+        },
+        "watchlistname": {
+          "type": "string"
+        },
+        "Items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "watchtype": {
+                "type": "string",
+                "enum": [
+                  "Security",
+                  "Watch list"
+                ],
+                "title": "Watch type"
+              },
+              "securityid": {
+                "type": "string",
+                "title": "Security ID"
+              },
+              "Securityno": {
+                "type": "string",
+                "title": "Security No."
+              },
+              "instrumenttype": {
+                "type": "string",
+                "title": "Instrument Type",
+                "readOnly": true
+              },
+              "watchlist": {
+                "type": "string",
+                "title": "Watch list",
+                "description": "Choose an existing Watch list, though not this"
+              },
+              "segment": {
+                "type": "string",
+                "title": "Segment"
+              }
+            }
+          }
+        },
+        "Items2": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "watchtype": {
+                "type": "string",
+                "enum": [
+                  "Security",
+                  "Watch list"
+                ],
+                "title": "Watch type"
+              },
+              "securityid": {
+                "type": "string",
+                "title": "Security ID"
+              },
+              "Securityno": {
+                "type": "string",
+                "title": "Security No."
+              },
+              "instrumenttype": {
+                "type": "string",
+                "title": "Instrument Type",
+                "readOnly": true
+              },
+              "watchlist": {
+                "type": "string",
+                "title": "Watch list",
+                "description": "Choose an existing Watch list, though not this"
+              },
+              "segment": {
+                "type": "string",
+                "title": "Segment"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
