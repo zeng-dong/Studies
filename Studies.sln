@@ -90,7 +90,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEnittyframeworkcoreThree
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Json", "Json", "{A32C0B1B-D087-435C-B6D9-2072A80735C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AboutJtoken", "AboutJtoken\AboutJtoken.csproj", "{F0B53852-FCB2-4FB5-8315-0D2D04794121}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AboutJtoken", "AboutJtoken\AboutJtoken.csproj", "{F0B53852-FCB2-4FB5-8315-0D2D04794121}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingOwnEventStore", "BuildingOwnEventStore", "{0F028551-7A70-4354-B46C-079265C3E5ED}"
+	ProjectSection(SolutionItems) = preProject
+		me-read.md = me-read.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -228,6 +233,7 @@ Global
 		{41502AC6-6362-42A5-B2CD-3A4EA3576A6C} = {9FCB19D7-4DAC-4B92-A9BC-B8FDFE28A110}
 		{A32C0B1B-D087-435C-B6D9-2072A80735C3} = {7EF55878-1ECF-4AB6-A8E2-229D5F15FCCC}
 		{F0B53852-FCB2-4FB5-8315-0D2D04794121} = {A32C0B1B-D087-435C-B6D9-2072A80735C3}
+		{0F028551-7A70-4354-B46C-079265C3E5ED} = {3C62CF59-711A-44DF-8360-6DC65BC6A161}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1880E68-29D6-48A6-9595-E961759756D1}
