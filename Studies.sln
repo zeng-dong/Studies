@@ -98,6 +98,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingOwnEventStore", "Bu
 		tables.sql.txt = tables.sql.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingOwnEventStore.Core", "BuildingOwnEventStore\BuildingOwnEventStore.Core\BuildingOwnEventStore.Core.csproj", "{D9FAA57F-0501-416D-9456-CEAEDFF3729F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -198,6 +200,10 @@ Global
 		{F0B53852-FCB2-4FB5-8315-0D2D04794121}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0B53852-FCB2-4FB5-8315-0D2D04794121}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0B53852-FCB2-4FB5-8315-0D2D04794121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9FAA57F-0501-416D-9456-CEAEDFF3729F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9FAA57F-0501-416D-9456-CEAEDFF3729F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9FAA57F-0501-416D-9456-CEAEDFF3729F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9FAA57F-0501-416D-9456-CEAEDFF3729F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -235,6 +241,7 @@ Global
 		{A32C0B1B-D087-435C-B6D9-2072A80735C3} = {7EF55878-1ECF-4AB6-A8E2-229D5F15FCCC}
 		{F0B53852-FCB2-4FB5-8315-0D2D04794121} = {A32C0B1B-D087-435C-B6D9-2072A80735C3}
 		{0F028551-7A70-4354-B46C-079265C3E5ED} = {3C62CF59-711A-44DF-8360-6DC65BC6A161}
+		{D9FAA57F-0501-416D-9456-CEAEDFF3729F} = {0F028551-7A70-4354-B46C-079265C3E5ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1880E68-29D6-48A6-9595-E961759756D1}
