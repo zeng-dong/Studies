@@ -95,6 +95,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingOwnEventStore", "BuildingOwnEventStore", "{0F028551-7A70-4354-B46C-079265C3E5ED}"
 	ProjectSection(SolutionItems) = preProject
 		me-read.md = me-read.md
+		tables.sql.txt = tables.sql.txt
 	EndProjectSection
 EndProject
 Global
