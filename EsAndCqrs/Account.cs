@@ -7,12 +7,39 @@ namespace EsAndCqrs
     {
         private Guid Id { get; set; }
         private decimal CurrentAmount { get; set; }
+        private decimal CurrentBalance { get; set; }
 
         public ICollection<Event> UncommitedEvents { get; } = new List<Event>();
+        public void Commit() => UncommitedEvents.Clear();
+
+        private enum State
+        {
+            NotSet,
+            Opened,
+            Closed
+        }
+
+        private State CurrentState { get; set; } = State.NotSet;
+
+        public void Rehydrate(ICollection<Event> events)
+        {
+            foreach (var evnt in events)
+            {
+                ((dynamic)this).Apply((dynamic)evnt);
+            }
+        }
+
+        private void Apply(AccountOpened evnt) => CurrentState = State.Opened;
+        private void Apply(MoneyTransferred evnt) => CurrentBalance -= evnt.Amount;
+
 
         public void Open(string owner, string iban)
         {
-            UncommitedEvents.Add(new AccountOpened(Id, owner, iban));
+            // update state to open
+            //UncommitedEvents.Add(new AccountOpened(Id, owner, iban));
+            var evnt = new AccountOpened(Id, owner, iban);
+            UncommitedEvents.Add(evnt);
+            Apply(evnt);
         }
 
         public void TransferMoney(decimal amount, string iban)
@@ -20,8 +47,17 @@ namespace EsAndCqrs
             if (CurrentAmount < amount)
                 throw new InvalidOperationException("Not enough money");
 
-            UncommitedEvents.Add(new MoneyTransferred(Id, amount, iban));
+            var evnt = new MoneyTransferred(Id, amount, iban);
+            UncommitedEvents.Add(evnt);
+            Apply(evnt);
         }
+
+        public void Close()
+        {
+            if (State.Opened != CurrentState)
+                throw new Exception();
+        }
+
     }
 
     internal class AccountOpened : Event
