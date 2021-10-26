@@ -98,7 +98,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingOwnEventStore", "Bu
 		tables.sql.txt = tables.sql.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingOwnEventStore.Core", "BuildingOwnEventStore\BuildingOwnEventStore.Core\BuildingOwnEventStore.Core.csproj", "{D9FAA57F-0501-416D-9456-CEAEDFF3729F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildingOwnEventStore.Core", "BuildingOwnEventStore\BuildingOwnEventStore.Core\BuildingOwnEventStore.Core.csproj", "{D9FAA57F-0501-416D-9456-CEAEDFF3729F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
