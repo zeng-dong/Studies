@@ -102,9 +102,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildingOwnEventStore.Core"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Yaml", "Yaml", "{7493D153-3D29-4081-A60E-266AE1706C84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingYamlDotNet", "Tools\Yaml\UsingYamlDotNet\UsingYamlDotNet.csproj", "{5AA05E4D-6D96-493F-BA3E-E20DA62DC87A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsingYamlDotNet", "Tools\Yaml\UsingYamlDotNet\UsingYamlDotNet.csproj", "{5AA05E4D-6D96-493F-BA3E-E20DA62DC87A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingYamlDotNetTests", "Tools\Yaml\UsingYamlDotNetTests\UsingYamlDotNetTests.csproj", "{0B6D58A4-4F46-4E94-8C29-631C4F2498A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsingYamlDotNetTests", "Tools\Yaml\UsingYamlDotNetTests\UsingYamlDotNetTests.csproj", "{0B6D58A4-4F46-4E94-8C29-631C4F2498A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingYamlDotNetCoreTests", "Tools\Yaml\UsingYamlDotNetCoreTests\UsingYamlDotNetCoreTests.csproj", "{D360224D-16C7-4510-99EF-14E009ABC058}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -218,6 +220,10 @@ Global
 		{0B6D58A4-4F46-4E94-8C29-631C4F2498A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B6D58A4-4F46-4E94-8C29-631C4F2498A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B6D58A4-4F46-4E94-8C29-631C4F2498A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D360224D-16C7-4510-99EF-14E009ABC058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D360224D-16C7-4510-99EF-14E009ABC058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D360224D-16C7-4510-99EF-14E009ABC058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D360224D-16C7-4510-99EF-14E009ABC058}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -259,6 +265,7 @@ Global
 		{7493D153-3D29-4081-A60E-266AE1706C84} = {7EF55878-1ECF-4AB6-A8E2-229D5F15FCCC}
 		{5AA05E4D-6D96-493F-BA3E-E20DA62DC87A} = {7493D153-3D29-4081-A60E-266AE1706C84}
 		{0B6D58A4-4F46-4E94-8C29-631C4F2498A9} = {7493D153-3D29-4081-A60E-266AE1706C84}
+		{D360224D-16C7-4510-99EF-14E009ABC058} = {7493D153-3D29-4081-A60E-266AE1706C84}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1880E68-29D6-48A6-9595-E961759756D1}
