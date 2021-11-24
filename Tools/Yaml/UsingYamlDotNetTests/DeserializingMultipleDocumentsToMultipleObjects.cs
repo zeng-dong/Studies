@@ -37,11 +37,15 @@ namespace UsingYamlDotNetTests
 
             var count = 0;
 
+            var customers = new List<Customer>();
+            var credits = new List<Credit>();
+
             while (parser.Accept<DocumentStart>(out var _))
             {
+
                 if (count == 0)
                 {
-                    var customers = deserializer.Deserialize<List<Customer>>(parser);
+                    customers = deserializer.Deserialize<List<Customer>>(parser);
 
                     output.WriteLine("## Customer");
                     output.WriteLine("-----");
@@ -54,7 +58,7 @@ namespace UsingYamlDotNetTests
                 }
                 else if (count == 1)
                 {
-                    var credits = deserializer.Deserialize<List<Credit>>(parser);
+                    credits = deserializer.Deserialize<List<Credit>>(parser);
 
                     output.WriteLine("## Credits");
                     output.WriteLine("-----");
@@ -64,14 +68,18 @@ namespace UsingYamlDotNetTests
                         output.WriteLine("{0}\t{1}\t{2}", credit.Id, credit.Code, credit.Max);
                     }
                     output.WriteLine();
+
+                    foreach (var customer in customers)
+                    {
+                        output.WriteLine("Can still access customer: {0}\t{1}", customer.Name, customer.Number);
+                    }
                 }
 
                 count++;
             }
         }
 
-        private const string Document = @"
----
+        private const string Document = @"---
 - Name: Kroger
   Number: KRG
 - Name: Chillis
@@ -83,7 +91,7 @@ namespace UsingYamlDotNetTests
 - Id: A2
   Code: Visa
   Max: 350            
-";
+...";
     }
 
     public class Customer
