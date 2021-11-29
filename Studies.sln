@@ -106,7 +106,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsingYamlDotNet", "Tools\Ya
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsingYamlDotNetTests", "Tools\Yaml\UsingYamlDotNetTests\UsingYamlDotNetTests.csproj", "{0B6D58A4-4F46-4E94-8C29-631C4F2498A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingYamlDotNetCoreTests", "Tools\Yaml\UsingYamlDotNetCoreTests\UsingYamlDotNetCoreTests.csproj", "{D360224D-16C7-4510-99EF-14E009ABC058}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsingYamlDotNetCoreTests", "Tools\Yaml\UsingYamlDotNetCoreTests\UsingYamlDotNetCoreTests.csproj", "{D360224D-16C7-4510-99EF-14E009ABC058}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Azure", "Azure", "{989FB96D-2C71-4AC7-AFBC-7255AAC76E49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoProcessor", "_azure\VideoProcessor\VideoProcessor.csproj", "{5B0D999B-4D1A-4404-AB4D-424EF305665D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -224,6 +228,10 @@ Global
 		{D360224D-16C7-4510-99EF-14E009ABC058}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D360224D-16C7-4510-99EF-14E009ABC058}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D360224D-16C7-4510-99EF-14E009ABC058}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B0D999B-4D1A-4404-AB4D-424EF305665D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B0D999B-4D1A-4404-AB4D-424EF305665D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B0D999B-4D1A-4404-AB4D-424EF305665D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B0D999B-4D1A-4404-AB4D-424EF305665D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -266,6 +274,7 @@ Global
 		{5AA05E4D-6D96-493F-BA3E-E20DA62DC87A} = {7493D153-3D29-4081-A60E-266AE1706C84}
 		{0B6D58A4-4F46-4E94-8C29-631C4F2498A9} = {7493D153-3D29-4081-A60E-266AE1706C84}
 		{D360224D-16C7-4510-99EF-14E009ABC058} = {7493D153-3D29-4081-A60E-266AE1706C84}
+		{5B0D999B-4D1A-4404-AB4D-424EF305665D} = {989FB96D-2C71-4AC7-AFBC-7255AAC76E49}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1880E68-29D6-48A6-9595-E961759756D1}
