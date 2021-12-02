@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Composability.OneAndOnlyProcessor;
+using System;
 
 namespace Composability
 {
@@ -19,11 +20,10 @@ namespace Composability
                 Text = "This is the new millennium, I promise you."
             };
 
-            Console.WriteLine("Processing document 1");
-            DocumentProcessor.Process(doc1);
-            Console.WriteLine();
-            Console.WriteLine("Processing document 2");
-            DocumentProcessor.Process(doc2);
+            //MultipleProcessorsRunner.Run(doc1, doc2);
+
+            OneAndOnlyProcessorRunner.Run(doc1, doc2);
+
             Console.ReadKey();
         }
     }
