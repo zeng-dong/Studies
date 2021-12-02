@@ -21,6 +21,14 @@ namespace Composability.FunctionalComposition
             rc.Processes.Add(DocumentProcesses.TranslateIntoFrench);
             rc.Processes.Add(DocumentProcesses.Spellcheck);
             rc.Processes.Add(DocumentProcesses.Repaginate);
+
+            // Adding a processing step with a non static method
+            TrademarkFilter trademarkFilter = new TrademarkFilter();
+            trademarkFilter.Trademarks.Add("O'Reilly");
+            trademarkFilter.Trademarks.Add("millennium");
+
+            rc.Processes.Add(trademarkFilter.HighlightTrademarks);
+
             return rc;
         }
     }
