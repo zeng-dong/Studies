@@ -1,4 +1,5 @@
 ﻿using Composability.FunctionalComposition;
+using Composability.GenericActions;
 using System;
 using System.Collections.Generic;
 
@@ -14,7 +15,9 @@ namespace Composability
 
             //OneAndOnlyProcessorRunner.Run(doc1, doc2);
 
-            FunctionalCompositionRunner.Run(docs[0], docs[1]);
+            //FunctionalCompositionRunner.Run(docs[0], docs[1]);
+
+            GenericActionsRunner.Run(docs[0], docs[1]);
 
             Console.ReadKey();
         }
