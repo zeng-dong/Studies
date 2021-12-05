@@ -19,17 +19,27 @@ namespace Visitors
         }
     }
 
-    public class Book : Item
+    public class Book : Item, IVisitableElement
     {
         public Book(int id, double price) : base(id, price)
         {
         }
+
+        public void Accetp(IVisitor visitor)
+        {
+            visitor.VisitBook(this);
+        }
     }
 
-    public class Vinyl : Item
+    public class Vinyl : Item, IVisitableElement
     {
         public Vinyl(int id, double price) : base(id, price)
         {
+        }
+
+        public void Accetp(IVisitor visitor)
+        {
+            visitor.VisitViny(this);
         }
     }
 }
