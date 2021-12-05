@@ -14,10 +14,10 @@ namespace Visitors
 
         public List<IAsset> Assets = new();
 
-        public void Accept(IVisitor visitor)
+        public void Accept(IAssetProcessor processor)
         {
             foreach (var asset in Assets)
-                asset.Accept(visitor);
+                asset.Accept(processor);
         }
     }
 
@@ -26,9 +26,9 @@ namespace Visitors
         public int EstimatedValue { get; set; }
         public int MonthlyRent { get; set; }
 
-        public void Accept(IVisitor visitor)
+        public void Accept(IAssetProcessor processor)
         {
-            visitor.Visit(this);
+            processor.Process(this);
         }
     }
 
@@ -37,9 +37,9 @@ namespace Visitors
         public int Amount { get; set; }
         public double MonthlyInterest { get; set; }
 
-        public void Accept(IVisitor visitor)
+        public void Accept(IAssetProcessor processor)
         {
-            visitor.Visit(this);
+            processor.Process(this);
         }
     }
 
@@ -48,9 +48,9 @@ namespace Visitors
         public int Owed { get; set; }
         public int MonthlyPayment { get; set; }
 
-        public void Accept(IVisitor visitor)
+        public void Accept(IAssetProcessor processor)
         {
-            visitor.Visit(this);
+            processor.Process(this);
         }
     }
 }

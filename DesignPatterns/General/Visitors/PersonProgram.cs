@@ -6,18 +6,38 @@ using System.Threading.Tasks;
 
 namespace Visitors
 {
-    public interface IVisitor
+    public interface IAssetProcessor
     {
-        void Visit(RealEstate realEstate);
+        void Process(RealEstate realEstate);
 
-        void Visit(Loan loan);
+        void Process(Loan loan);
 
-        void Visit(BankAccount bankAccount);
+        void Process(BankAccount bankAccount);
+    }
+
+    public class NetWorthProcessor : IAssetProcessor
+    {
+        public int Total { get; set; }
+
+        public void Process(RealEstate realEstate)
+        {
+            Total += realEstate.EstimatedValue;
+        }
+
+        public void Process(Loan loan)
+        {
+            Total -= loan.Owed;
+        }
+
+        public void Process(BankAccount bankAccount)
+        {
+            Total += bankAccount.Amount;
+        }
     }
 
     public interface IAsset
     {
-        void Accept(IVisitor visitor);
+        void Accept(IAssetProcessor processor);
     }
 
     internal class PersonProgram
@@ -25,24 +45,27 @@ namespace Visitors
         internal static void Run()
         {
             var person = new Person();
-            person.BankAccounts.Add(new BankAccount { Amount = 1000, MonthlyInterest = 0.01 });
-            person.BankAccounts.Add(new BankAccount { Amount = 2000, MonthlyInterest = 0.02 });
+            person.Assets.Add(new BankAccount { Amount = 1000, MonthlyInterest = 0.01 });
+            person.Assets.Add(new BankAccount { Amount = 2000, MonthlyInterest = 0.02 });
 
-            person.RealEstates.Add(new RealEstate { EstimatedValue = 79000, MonthlyRent = 500 });
+            person.Assets.Add(new RealEstate { EstimatedValue = 79000, MonthlyRent = 500 });
 
-            person.Loans.Add(new Loan { Owed = 40000, MonthlyPayment = 40 });
+            person.Assets.Add(new Loan { Owed = 40000, MonthlyPayment = 40 });
 
-            int netWorth = 0;
-            foreach (var bankAccount in person.BankAccounts)
-                netWorth += bankAccount.Amount;
+            //int netWorth = 0;
+            //foreach (var bankAccount in person.BankAccounts)
+            //    netWorth += bankAccount.Amount;
+            //
+            //foreach (var realEstate in person.RealEstates)
+            //    netWorth += realEstate.EstimatedValue;
+            //
+            //foreach (var loan in person.Loans)
+            //    netWorth -= loan.Owed;
 
-            foreach (var realEstate in person.RealEstates)
-                netWorth += realEstate.EstimatedValue;
+            var netWorthVisitor = new NetWorthProcessor();
+            person.Accept(netWorthVisitor);
 
-            foreach (var loan in person.Loans)
-                netWorth -= loan.Owed;
-
-            Console.WriteLine(netWorth);
+            Console.WriteLine(netWorthVisitor.Total);
             Console.ReadLine();
         }
     }
