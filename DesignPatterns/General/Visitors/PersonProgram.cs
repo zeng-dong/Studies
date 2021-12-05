@@ -35,6 +35,26 @@ namespace Visitors
         }
     }
 
+    public class MonthlyIncomeProcessor : IAssetProcessor
+    {
+        public double Amount { get; set; }
+
+        public void Process(RealEstate realEstate)
+        {
+            Amount += realEstate.MonthlyRent;
+        }
+
+        public void Process(Loan loan)
+        {
+            Amount -= loan.MonthlyPayment;
+        }
+
+        public void Process(BankAccount bankAccount)
+        {
+            Amount += bankAccount.Amount * bankAccount.MonthlyInterest;
+        }
+    }
+
     public interface IAsset
     {
         void Accept(IAssetProcessor processor);
@@ -63,9 +83,12 @@ namespace Visitors
             //    netWorth -= loan.Owed;
 
             var netWorthVisitor = new NetWorthProcessor();
+            var incomeVisitor = new MonthlyIncomeProcessor();
             person.Accept(netWorthVisitor);
+            person.Accept(incomeVisitor);
 
             Console.WriteLine(netWorthVisitor.Total);
+            Console.WriteLine(incomeVisitor.Amount);
             Console.ReadLine();
         }
     }
