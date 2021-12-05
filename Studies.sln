@@ -116,7 +116,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_General", "_General", "{2F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Composability", "DesignPatterns\General\Composability\Composability.csproj", "{5C6831A8-35F1-4AFB-B814-E21BC4B1EAB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visitors", "DesignPatterns\General\Visitors\Visitors.csproj", "{E450606F-A824-41F1-969A-2F5EE282FEE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Visitors", "DesignPatterns\General\Visitors\Visitors.csproj", "{E450606F-A824-41F1-969A-2F5EE282FEE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Specifications", "DesignPatterns\General\Specifications\Specifications.csproj", "{60F890BA-0E0B-4F21-B83A-A82E8894CF84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -246,6 +248,10 @@ Global
 		{E450606F-A824-41F1-969A-2F5EE282FEE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E450606F-A824-41F1-969A-2F5EE282FEE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E450606F-A824-41F1-969A-2F5EE282FEE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60F890BA-0E0B-4F21-B83A-A82E8894CF84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60F890BA-0E0B-4F21-B83A-A82E8894CF84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60F890BA-0E0B-4F21-B83A-A82E8894CF84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60F890BA-0E0B-4F21-B83A-A82E8894CF84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -292,6 +298,7 @@ Global
 		{2FEBB87B-E6FD-4A9D-BBE5-1BE74740EB92} = {3C62CF59-711A-44DF-8360-6DC65BC6A161}
 		{5C6831A8-35F1-4AFB-B814-E21BC4B1EAB0} = {2FEBB87B-E6FD-4A9D-BBE5-1BE74740EB92}
 		{E450606F-A824-41F1-969A-2F5EE282FEE6} = {3C62CF59-711A-44DF-8360-6DC65BC6A161}
+		{60F890BA-0E0B-4F21-B83A-A82E8894CF84} = {3C62CF59-711A-44DF-8360-6DC65BC6A161}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1880E68-29D6-48A6-9595-E961759756D1}
