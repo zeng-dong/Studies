@@ -22,16 +22,16 @@ namespace Visitors
 
         public void Print()
         {
-            Console.WriteLine($"\nYou saved total of ${_savings} on today's order");
+            Console.WriteLine($"\nYou saved total of ${ Math.Round(_savings)} on today's order");
         }
 
         public void VisitBook(Book book)
         {
-            double discount = 0.0;
+            var discount = 0.0;
             if (book.Price < 20.00)
             {
                 discount = book.GetDiscount(0.10);
-                Console.WriteLine($"Discounted: Book #{book.Id} is now ${book.Price - discount }");
+                Console.WriteLine($"Discounted: Book #{book.Id} is now ${ Math.Round(book.Price - discount) }");
             }
             else
             {
@@ -44,9 +44,31 @@ namespace Visitors
         public void VisitViny(Vinyl vinyl)
         {
             var discount = vinyl.GetDiscount(0.15);
-            Console.WriteLine($"Super Savings: Book #{vinyl.Id} is now ${vinyl.Price - discount }");
+            Console.WriteLine($"Super Savings: Vinyl #{vinyl.Id} is now ${ Math.Round(vinyl.Price - discount) }");
 
             _savings += discount;
+        }
+    }
+
+    public class SalesVisitor : IVisitor
+    {
+        private int BookCount = 0;
+        private int VinylCount = 0;
+
+        public void Print()
+        {
+            Console.WriteLine($"Books sold: { BookCount } \nVinyl sold: {VinylCount}");
+            Console.WriteLine($"The store sold {BookCount + VinylCount } units today!");
+        }
+
+        public void VisitBook(Book book)
+        {
+            BookCount++;
+        }
+
+        public void VisitViny(Vinyl vinyl)
+        {
+            VinylCount++;
         }
     }
 }
