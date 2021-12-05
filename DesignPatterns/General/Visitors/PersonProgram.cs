@@ -6,6 +6,20 @@ using System.Threading.Tasks;
 
 namespace Visitors
 {
+    public interface IVisitor
+    {
+        void Visit(RealEstate realEstate);
+
+        void Visit(Loan loan);
+
+        void Visit(BankAccount bankAccount);
+    }
+
+    public interface IAsset
+    {
+        void Accept(IVisitor visitor);
+    }
+
     internal class PersonProgram
     {
         internal static void Run()
