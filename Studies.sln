@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31912.275
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesignPatterns", "DesignPatterns", "{3C62CF59-711A-44DF-8360-6DC65BC6A161}"
 EndProject
@@ -118,9 +118,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Composability", "DesignPatt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Visitors", "DesignPatterns\General\Visitors\Visitors.csproj", "{E450606F-A824-41F1-969A-2F5EE282FEE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Specifications", "DesignPatterns\General\Specifications\Specifications.csproj", "{60F890BA-0E0B-4F21-B83A-A82E8894CF84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Specifications", "DesignPatterns\General\Specifications\Specifications.csproj", "{60F890BA-0E0B-4F21-B83A-A82E8894CF84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rules", "DesignPatterns\General\Rules\Rules.csproj", "{937E3328-28AD-49D6-8C04-D0C01DDA270E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rules", "DesignPatterns\General\Rules\Rules.csproj", "{937E3328-28AD-49D6-8C04-D0C01DDA270E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Books", "Books", "{05920BE7-5815-4DE5-8874-B68107F0343C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Readings", "Books\Readings\Readings.csproj", "{3EB4E7C5-D311-4F0B-980F-3F359BC79AF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -258,6 +262,10 @@ Global
 		{937E3328-28AD-49D6-8C04-D0C01DDA270E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{937E3328-28AD-49D6-8C04-D0C01DDA270E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{937E3328-28AD-49D6-8C04-D0C01DDA270E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EB4E7C5-D311-4F0B-980F-3F359BC79AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EB4E7C5-D311-4F0B-980F-3F359BC79AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EB4E7C5-D311-4F0B-980F-3F359BC79AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EB4E7C5-D311-4F0B-980F-3F359BC79AF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -306,6 +314,7 @@ Global
 		{E450606F-A824-41F1-969A-2F5EE282FEE6} = {3C62CF59-711A-44DF-8360-6DC65BC6A161}
 		{60F890BA-0E0B-4F21-B83A-A82E8894CF84} = {3C62CF59-711A-44DF-8360-6DC65BC6A161}
 		{937E3328-28AD-49D6-8C04-D0C01DDA270E} = {3C62CF59-711A-44DF-8360-6DC65BC6A161}
+		{3EB4E7C5-D311-4F0B-980F-3F359BC79AF5} = {05920BE7-5815-4DE5-8874-B68107F0343C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1880E68-29D6-48A6-9595-E961759756D1}
