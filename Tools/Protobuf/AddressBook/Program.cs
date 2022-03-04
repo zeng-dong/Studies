@@ -14,7 +14,8 @@ public class Program
             {
                 "wade.smith@gmail.com",
                 "wsmith@company.com"
-            }
+            },
+            Amount = 101
         };
 
         //using (var memoryStream = new MemoryStream())
@@ -31,7 +32,7 @@ public class Program
         using (var fileStream = File.OpenRead("person.buf"))
         {
             var myPerson = Serializer.Deserialize<Person>(fileStream);
-            Console.WriteLine(myPerson.FirstName);
+            Console.WriteLine($"{ myPerson.FirstName}, with amount = {person.Amount}");
         }
     }
 }
