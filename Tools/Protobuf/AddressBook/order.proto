@@ -1,0 +1,71 @@
+﻿// Declares the syntax version being used (Version 3)
+syntax = "proto3";
+
+// Specifies the namespace to be used for the generated C# types. 
+option csharp_namespace = "AddressBook.ProtoBuf.Model";
+
+//  Google's "Well Known Types" extensions: DateTime
+import "google/protobuf/timestamp.proto"; 
+
+//  Google's "Well Known Types" extensions: Nullable types
+import "google/protobuf/wrappers.proto"; 
+
+message OrderInfo {
+
+  message DESTINATION {
+    string name = 1;
+  }
+
+  DESTINATION destination = 1;
+
+  message ORDERDATA {
+    string sourceOrderId = 1;
+
+    message ITEMS {
+      string sku = 1;
+      string sourceItemId = 2;
+
+      message COMPONENTS {
+        string code = 1;
+        bool fetch = 2;
+        string path = 3;
+      }
+
+      repeated COMPONENTS components = 3;
+    }
+
+    repeated ITEMS items = 2;
+
+    message SHIPMENTS {
+
+      message SHIPTO {
+        string name = 1;
+        string companyName = 2;
+        string address1 = 3;
+        string town = 4;
+        string postcode = 5;
+        string isoCountry = 6;
+      }
+
+      SHIPTO shipTo = 1;
+
+      message CARRIER {
+        string code = 1;
+        string service = 2;
+      }
+
+      CARRIER carrier = 2;
+    }
+
+    repeated SHIPMENTS shipments = 3;
+    
+    // DateTime Type
+    google.protobuf.Timestamp submittedDateTime = 4;
+    uint32 orderTotal = 5;
+
+    // Nullable Type uint?
+    google.protobuf.UInt32Value orderDiscountAmount = 6;
+  }
+
+  ORDERDATA orderData = 2;
+}
