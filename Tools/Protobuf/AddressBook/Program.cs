@@ -18,6 +18,19 @@ public class Program
             Amount = 101
         };
 
+        UseProtoBufSerializerDirectly(person);
+
+        Console.WriteLine("Now clone ....");
+        var anotherPerson = SerializationTool.Clone(person);
+        Console.WriteLine($"{ anotherPerson.FirstName}, with amount = {anotherPerson.Amount}");
+
+        Console.WriteLine("Now clone without attribute ....");
+        var anotherAccount = SerializationTool.Clone(new Account { Amount = 200, Id = "A1", Name = "Checking" });
+        Console.WriteLine($"{ anotherAccount.Name}, with amount = {anotherAccount.Amount}");
+    }
+
+    private static void UseProtoBufSerializerDirectly(Person person)
+    {
         //using (var memoryStream = new MemoryStream())
         //{
         //    Serializer.Serialize(memoryStream, person);
@@ -32,7 +45,7 @@ public class Program
         using (var fileStream = File.OpenRead("person.buf"))
         {
             var myPerson = Serializer.Deserialize<Person>(fileStream);
-            Console.WriteLine($"{ myPerson.FirstName}, with amount = {person.Amount}");
+            Console.WriteLine($"{ myPerson.FirstName}, with amount = {myPerson.Amount}");
         }
     }
 }

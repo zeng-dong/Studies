@@ -7,9 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="order.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.19.4" />
     <PackageReference Include="Google.Protobuf.Tools" Version="3.19.4" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.43.0" />
     <PackageReference Include="protobuf-net" Version="3.0.101" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="order.proto" />
   </ItemGroup>
 
 </Project>
