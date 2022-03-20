@@ -25,4 +25,16 @@ public class StringWorker
 
         return sb.ToString();
     }
+
+    public string BuildBetter2(string value)
+    {
+        var sb = new StringBuilder(value);
+
+        for (var i = 0; i < 50; i++)
+        {
+            sb.Append(' ').Append("test");
+        }
+
+        return sb.ToString();
+    }
 }

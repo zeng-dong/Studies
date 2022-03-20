@@ -16,4 +16,10 @@ public class StringFunctions
     {
         var x = new StringWorker().BuildBetter("test");
     }
+
+    [Benchmark()]
+    public void BuildStringBetter2()
+    {
+        var x = new StringWorker().BuildBetter2("test");
+    }
 }
