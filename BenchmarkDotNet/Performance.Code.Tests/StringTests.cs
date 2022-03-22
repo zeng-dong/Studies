@@ -30,4 +30,43 @@ public class StringTests
 
         Assert.Equal(bad, better);
     }
+
+    [Fact]
+    public void Split_string_in_vaive_way()
+    {
+        var name = "Zeng, Michael";
+        var worker = new StringWorker();
+
+        var lastName = worker.NaiveSplit(name).lastName;
+        var firstName = worker.NaiveSplit(name).firstName;
+
+        Assert.Equal("Zeng", lastName);
+        Assert.Equal("Michael", firstName);
+    }
+
+    [Fact]
+    public void Split_string_using_split_function()
+    {
+        var name = "Zeng, Michael";
+        var worker = new StringWorker();
+
+        var lastName = worker.SplitSplit(name).lastName;
+        var firstName = worker.SplitSplit(name).firstName;
+
+        Assert.Equal("Zeng", lastName);
+        Assert.Equal("Michael", firstName);
+    }
+
+    [Fact]
+    public void Split_string_using_span_function()
+    {
+        var name = "Zeng, Michael";
+        var worker = new StringWorker();
+
+        var lastName = worker.SpanSplit(name).lastName;
+        var firstName = worker.SpanSplit(name).firstName;
+
+        Assert.Equal("Zeng", lastName);
+        Assert.Equal("Michael", firstName);
+    }
 }

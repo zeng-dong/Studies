@@ -22,4 +22,22 @@ public class StringFunctions
     {
         var x = new StringWorker().BuildBetter2("test");
     }
+
+    [Benchmark()]
+    public void NaiveSplit()
+    {
+        var x = new StringWorker().NaiveSplit("Zeng, Michael");
+    }
+
+    [Benchmark()]
+    public void SplitSplit()
+    {
+        var x = new StringWorker().SplitSplit("Zeng, Michael");
+    }
+
+    [Benchmark()]
+    public void SpanSplit()
+    {
+        var x = new StringWorker().SpanSplit("Zeng, Michael");
+    }
 }
