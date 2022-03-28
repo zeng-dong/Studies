@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.32126.317
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesignPatterns", "DesignPatterns", "{3C62CF59-711A-44DF-8360-6DC65BC6A161}"
 EndProject
@@ -132,11 +132,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddressBook", "Tools\Protob
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BenchmarkDotNet", "BenchmarkDotNet", "{2F26B49B-7DBE-4887-A2A4-34B6F53A0668}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Performance.Code", "BenchmarDotNet\Performance.Code\Performance.Code.csproj", "{49351796-0AF4-4E78-979B-2EFDE1512675}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Performance.Code", "BenchmarDotNet\Performance.Code\Performance.Code.csproj", "{49351796-0AF4-4E78-979B-2EFDE1512675}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Performance.Code.Tests", "BenchmarkDotNet\Performance.Code.Tests\Performance.Code.Tests.csproj", "{F98418C6-3A6C-4795-91B7-19C3FA69E4BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Performance.Code.Tests", "BenchmarkDotNet\Performance.Code.Tests\Performance.Code.Tests.csproj", "{F98418C6-3A6C-4795-91B7-19C3FA69E4BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Performance.Benchmarker", "BenchmarkDotNet\Performance.Benchmarker\Performance.Benchmarker.csproj", "{585BF286-E3F7-4C7E-97F1-153F3DFB4688}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Performance.Benchmarker", "BenchmarkDotNet\Performance.Benchmarker\Performance.Benchmarker.csproj", "{585BF286-E3F7-4C7E-97F1-153F3DFB4688}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rx", "Rx", "{0AEF5345-DF4D-43CD-9D8E-EFE7E713F2E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rx101", "Rx\Rx101\Rx101.csproj", "{B3206D2A-0580-455E-B694-077B71DE5AB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -294,6 +298,10 @@ Global
 		{585BF286-E3F7-4C7E-97F1-153F3DFB4688}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{585BF286-E3F7-4C7E-97F1-153F3DFB4688}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{585BF286-E3F7-4C7E-97F1-153F3DFB4688}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3206D2A-0580-455E-B694-077B71DE5AB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3206D2A-0580-455E-B694-077B71DE5AB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3206D2A-0580-455E-B694-077B71DE5AB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3206D2A-0580-455E-B694-077B71DE5AB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -349,6 +357,8 @@ Global
 		{49351796-0AF4-4E78-979B-2EFDE1512675} = {2F26B49B-7DBE-4887-A2A4-34B6F53A0668}
 		{F98418C6-3A6C-4795-91B7-19C3FA69E4BF} = {2F26B49B-7DBE-4887-A2A4-34B6F53A0668}
 		{585BF286-E3F7-4C7E-97F1-153F3DFB4688} = {2F26B49B-7DBE-4887-A2A4-34B6F53A0668}
+		{0AEF5345-DF4D-43CD-9D8E-EFE7E713F2E6} = {94D07055-AFCA-4E7F-9A9E-49AA273BACBA}
+		{B3206D2A-0580-455E-B694-077B71DE5AB3} = {0AEF5345-DF4D-43CD-9D8E-EFE7E713F2E6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1880E68-29D6-48A6-9595-E961759756D1}
